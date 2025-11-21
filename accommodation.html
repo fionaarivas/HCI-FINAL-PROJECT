@@ -179,7 +179,7 @@
     flex: 1 1 0; 
     max-width: 150px;
 }
-
+/* HAKDOG */
 
 
     .resort-description {
@@ -243,59 +243,62 @@
 
 <section style="
   display: grid; 
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
   gap: 30px; 
   padding: 0 60px 50px;
-  align-items: start;
 ">
   <!-- CARD 1 -->
-  <div style="background:white; border:1px solid #223f1f; border-radius:10px; overflow:hidden; box-shadow:0 3px 6px rgba(0,0,0,0.05); ">
+  <div style="background:white; border:1px solid #223f1f; border-radius:10px; overflow:hidden; box-shadow:0 3px 6px rgba(0,0,0,0.05); transition:0.3s;">
     <img src="https://images.unsplash.com/photo-1578898884733-7a1c0d3c1d02?auto=format&fit=crop&w=800&q=80"
-    style="width:100%; height:180px; object-fit:cover;">
+      alt="Riverside Room" style="width:100%; height:180px; object-fit:cover;">
     <div style="padding:15px;">
+      <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600; margin-bottom:5px;">Riverside Room</div>
+      <div style="font-size:13px; color:#555; margin-bottom:10px; min-height:45px;">
+        Cozy riverside room ideal for couples or solo travelers, featuring modern amenities and relaxing views.
+      </div>
       <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600;">Family Room</div>
       <div style="font-size:13px; color:#555; margin:5px 0 10px;">Spacious room ideal for families.</div>
       <div>
-        <span style="color:#f2c94c;">★★★★★</span>
-        <span style="float:right; font-weight:bold;">₱ 12,000</span>
+        <span style="color:#f2c94c; font-size:16px;">★ ★ ★ ★ ★</span>
+        <span style="font-weight:bold; font-size:15px; float:right;">₱ 5,000</span>
       </div>
-      <button style="margin-top:10px; background:#223f1f; color:white; border:none; padding:6px 18px; border-radius:20px; cursor:pointer;">
-        View details
-      </button>
+      <button style="display:inline-block; background-color:#223f1f; color:white; padding:6px 18px; border:none; border-radius:20px; font-size:13px; cursor:pointer; margin-top:8px; transition:0.3s;">View details</button>
     </div>
   </div>
 
   <!-- CARD 2 -->
-  <div style="background:white; border:1px solid #223f1f; border-radius:10px; overflow:hidden; box-shadow:0 3px 6px rgba(0,0,0,0.05); ">
-    <img src="https://images.unsplash.com/photo-1560448070-1b3f3fc332a8?auto=format&fit=crop&w=800&q=80"
-    style="width:100%; height:180px; object-fit:cover;">
+  <div style="background:white; border:1px solid #223f1f; border-radius:10px; overflow:hidden; box-shadow:0 3px 6px rgba(0,0,0,0.05); transition:0.3s;">
+    <img src="https://images.unsplash.com/photo-1560448070-1b3f3fc332a8?auto=format&fit=crop&w=800&q=80" alt="Garden Villa" style="width:100%; height:180px; object-fit:cover;">
     <div style="padding:15px;">
+      <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600; margin-bottom:5px;">Garden Villa</div>
+      <div style="font-size:13px; color:#555; margin-bottom:10px; min-height:45px;">
+        Spacious villa surrounded by lush gardens, perfect for families seeking comfort and tranquility.
+      </div>
       <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600;">Antique Room</div>
       <div style="font-size:13px; color:#555; margin:5px 0 10px;">Classic wooden-style room.</div>
       <div>
-        <span style="color:#f2c94c;">★★★★★</span>
-        <span style="float:right; font-weight:bold;">₱ 2,500</span>
+        <span style="color:#f2c94c; font-size:16px;">★ ★ ★ ★ ★</span>
+        <span style="font-weight:bold; font-size:15px; float:right;">₱ 8,000</span>
       </div>
-      <button style="margin-top:10px; background:#223f1f; color:white; border:none; padding:6px 18px; border-radius:20px; cursor:pointer;">
-        View details
-      </button>
+      <button style="display:inline-block; background-color:#223f1f; color:white; padding:6px 18px; border:none; border-radius:20px; font-size:13px; cursor:pointer; margin-top:8px; transition:0.3s;">View details</button>
     </div>
   </div>
 
   <!-- CARD 3 -->
-  <div style="background:white; border:1px solid #223f1f; border-radius:10px; overflow:hidden; box-shadow:0 3px 6px rgba(0,0,0,0.05); ">
-    <img src="https://images.unsplash.com/photo-1501117716987-c8e36f83f7c5?auto=format&fit=crop&w=800&q=80"
-    style="width:100%; height:180px; object-fit:cover;">
+  <div style="background:white; border:1px solid #223f1f; border-radius:10px; overflow:hidden; box-shadow:0 3px 6px rgba(0,0,0,0.05); transition:0.3s;">
+    <img src="https://images.unsplash.com/photo-1501117716987-c8e36f83f7c5?auto=format&fit=crop&w=800&q=80" alt="Family Room" style="width:100%; height:180px; object-fit:cover;">
     <div style="padding:15px;">
+      <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600; margin-bottom:5px;">Family Room</div>
+      <div style="font-size:13px; color:#555; margin-bottom:10px; min-height:45px;">
+        Perfect for family stays, featuring cozy beds, modern amenities, and a relaxing riverside view.
+      </div>
       <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600;">Reina Room</div>
       <div style="font-size:13px; color:#555; margin:5px 0 10px;">Minimalist room with complete amenities.</div>
       <div>
-        <span style="color:#f2c94c;">★★★★★</span>
-        <span style="float:right; font-weight:bold;">₱ 5,600</span>
+        <span style="color:#f2c94c; font-size:16px;">★ ★ ★ ★ ★</span>
+        <span style="font-weight:bold; font-size:15px; float:right;">₱ 6,500</span>
       </div>
-      <button style="margin-top:10px; background:#223f1f; color:white; border:none; padding:6px 18px; border-radius:20px; cursor:pointer;">
-        View details
-      </button>
+      <button style="display:inline-block; background-color:#223f1f; color:white; padding:6px 18px; border:none; border-radius:20px; font-size:13px; cursor:pointer; margin-top:8px; transition:0.3s;">View details</button>
     </div>
   </div>
 </section>
