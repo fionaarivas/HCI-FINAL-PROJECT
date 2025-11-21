@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Big Family Room - Yabut River Resort</title>
+<style>
+  /* Reset and base */
+  body, h1, p, ul, li, div {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Times New Roman', Times, serif,Arial, sans-serif;
+    background: #e5e0dc;
+    color: #1d1d1d;
+    line-height: 1.5;
+  }
+  a, button {
+    font-family: inherit;
+  }
+
+  /* Header */
+  header {
+    background-color: #0f3e1b;
+    color: #e4ebdd;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+  }
+  header .brand {
+    font-size: 20px;
+  }
+  header .location {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  header .location svg {
+    fill: #e4ebdd;
+    width: 16px;
+    height: 16px;
+  }
+  header .profile-img {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 20px;
+  }
+
+  /* Container */
+  main {
+    max-width: 1000px;
+    margin: 40px auto 80px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 36px;
+  }
+
+  /* Left content */
+  .left-col h1 {
+    font-weight: 900;
+    font-size: 24px;
+    margin-bottom: 14px;
+    color: #1d1d1d;
+  }
+
+  /* Images */
+  .images {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 22px;
+  }
+  .images .big-img {
+    flex: 1.5;
+    border: 1px solid #bbb2a8;
+    max-height: 225px;
+    object-fit: cover;
+  }
+  .images .right-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 13px;
+  }
+  .images .right-images img {
+    width: 280px;
+    height: 110px;
+    object-fit: cover;
+    border: 1px solid #bbb2a8;
+  }
+
+  /* Description */
+  .description p {
+    font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 18px;
+    max-width: 620px;
+  }
+  .description ul {
+    list-style: disc;
+    margin-left: 20px;
+    color: #1d1d1d;
+  }
+  .description ul li {
+    font-size: 15px;
+    padding-bottom: 5px;
+  }
+
+  /* Booking box */
+  .booking-box {
+  background: #f3f1ec;
+  padding: 40px 24px 10px;  /* TOP, LEFT/RIGHT, BOTTOM increased */
+  border: 1px solid #b1cc9b;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+}
+  .price {
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+  .price small {
+    font-weight: 300;
+    font-size: 15px;
+  }
+
+  .booking-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .booking-col {
+    width: 48%;
+  }
+  label {
+    display: block;
+    font-weight: 600;
+    padding-bottom: 3px;
+    color: #333;
+  }
+  select {
+    width: 100%;
+    padding: 4px 6px;
+    border: 1px solid #9da888;
+    border-radius: 2px;
+    font-size: 14px;
+    outline: none;
+    background-color: white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+
+  .guests-select {
+    margin-bottom: 14px;
+  }
+
+  .calc-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .calc-row:nth-child(1) {
+    font-weight: 700;
+  }
+  .calc-row:not(:first-child):not(:last-child) {
+    opacity: 0.7;
+  }
+
+  .total-row {
+    font-weight: 700;
+    margin-top: 8px;
+    border-top: 1px solid #b1cc9b;
+    padding-top: 8px;
+    font-size: 15px;
+  }
+
+  button.reserve-btn {
+    margin-top: 14px;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    height: 36px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: capitalize;
+  }
+
+
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">Yabut River Resort</div>
+  <div style="display:flex; align-items:center;">
+    <div class="location">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"></path></svg>
+      Location: Calaca Batangas
+    </div>
+    <img src="https://i.ibb.co/w6CYDDw/profile-cat.jpg" alt="User Profile" class="profile-img" />
+  </div>
+</header>
+
+<main>
+  <section class="left-col">
+    <h1>Big Family Room</h1>
+    <div class="images">
+      <img class="big-img" src="https://i.ibb.co/Z7VFtZM/big-family-room1.jpg" alt="Big Family Room main" />
+      <div class="right-images">
+        <img src="https://i.ibb.co/VJBbgvF/big-family-room2.jpg" alt="Bathroom" />
+        <img src="https://i.ibb.co/SXBpqQq/big-family-room3.jpg" alt="Dining area" />
+      </div>
+    </div>
+
+    <div class="description">
+      <p>A spacious and cozy space ideal for family gatherings and relaxation. It’s perfect for bonding, entertainment, and creating lasting memories together.</p>
+      <ul>
+        <li>Good for 10 pax</li>
+        <li>With own comfort rooms, kitchen & dining area</li>
+        <li>5 Queen sized bed plus Extra pull out bed</li>
+        <li>With 10 towels</li>
+      </ul>
+    </div>
+  </section>
+
+  <aside class="booking-box" aria-label="Booking details and reservation">
+    <div class="price">₱ 12,000 <small>night</small></div>
+
+    <div class="booking-row">
+      <div class="booking-col">
+        <label for="checkin">Check in</label>
+        <select id="checkin" name="checkin" aria-describedby="checkin-desc">
+          <option value="2025-06-23" selected>6/23/2025</option>
+        </select>
+      </div>
+      <div class="booking-col">
+        <label for="checkout">Check out</label>
+        <select id="checkout" name="checkout" aria-describedby="checkout-desc">
+          <option value="2025-06-26" selected>6/26/2025</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="guests-select">
+      <label for="guests">Guests</label>
+      <select id="guests" name="guests">
+        <option value="6" selected>6 guests</option>
+      </select>
+    </div>
+
+    <div class="calc-row">
+      <span>₱ 12,000 x 3 nights</span><span>₱ 36,000</span>
+    </div>
+    <div class="calc-row">
+      <span>service fee</span><span>₱ 500</span>
+    </div>
+
+    <div class="total-row">
+      Total
+    </div>
+
+    <button type="button" class="reserve-btn">Reserve</button>
+  </aside>
+</main>
+</body>
+</html>
