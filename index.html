@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home — Yabut River Resort</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --nav-dark:#264823;
+      --nav-olive:#5b7a3f;
+      --pill-text:#e7f5d9;
+      --content-width:680px;
+      --accent:#9bd98b;
+      --muted-text:#dfe8d7;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:"Inter",sans-serif;
+      color:#fff;
+      background:#000;
+      line-height:1.5;
+    }
+    .topbar{
+      position:fixed;top:0;left:0;right:0;height:64px;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 28px;background:var(--nav-dark);z-index:30;
+    }
+    .brand{color:var(--muted-text);font-size:18px;font-weight:600}
+    nav ul{list-style:none;display:flex;gap:14px;align-items:center}
+    nav a{
+      color:var(--muted-text);text-decoration:none;padding:8px 14px;border-radius:999px;font-weight:600;
+    }
+    .nav-home{background:var(--nav-olive);color:var(--pill-text)}
+    .btn-login{
+      background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.06);
+      padding:8px 14px;border-radius:999px;color:#e9f4d9;font-weight:600;
+    }
+    .hero{
+      position:relative;height:100vh;padding-top:64px;display:flex;align-items:center;
+      background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+      url("https://theweekendgypsy.wordpress.com/wp-content/uploads/2016/02/img_2226.jpg") center/cover no-repeat;
+    }
+    .hero-content{max-width:var(--content-width);padding:60px 28px;margin-left:8%}
+    .title{
+      font-family:'Times New Roman',serif;font-size:90px;font-weight:900;margin-bottom:25px;text-align:center;
+    }
+    .signup-btn{
+      display:inline-block;background:#66a853;color:#fff;padding:10px 26px;border-radius:999px;
+      font-size:18px;font-weight:700;margin-left:160px;text-decoration:none;
+    }
+    .location{margin-top:28px;font-weight:700;letter-spacing:2px}
+    .lead{margin-top:10px;font-size:18px;max-width:450px}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Yabut River Resort</div>
+    <nav>
+      <ul>
+        <li><a class="nav-home" href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="btn-login" href="login.html">Log in</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="title">Yabut River<br>Resort</h1>
+        <a class="signup-btn" href="signup.html">Sign Up</a>
+        <div class="location">CALACA BATANGAS</div>
+        <p class="lead">A riverside getaway where guests can relax, enjoy nature, and explore fun activities with family and friends.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

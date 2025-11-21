@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Yabut River Resort</title>
+<style>
+/* Reset and base */
+body, h1, h2, p, ul, li, nav, header, section {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Georgia, serif;
+color: #ffffff;
+}
+body {
+background-color: #f0f0f0;
+line-height: 1.5;
+}
+a {
+text-decoration: none;
+color: inherit;
+cursor: pointer;
+}
+ul {
+list-style: none;
+}
+
+/* Header styles */
+header {
+background-color: #264823;
+color: white;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0.75rem 1.5rem;
+font-size: 0.9rem;
+}
+header .brand {
+font-weight: 500;
+font-family: Georgia, serif;
+font-size: 1.25rem;
+}
+header .location {
+display: flex;
+align-items: center;
+gap: 0.4rem;
+font-weight: 400;
+user-select: none;
+}
+header .location svg {
+width: 1rem;
+height: 1rem;
+fill: white;
+}
+
+/* ✅ Profile image clickable circle */
+header .profile-link {
+display: inline-block;
+}
+header .profile-img {
+width: 2rem;
+height: 2rem;
+border-radius: 50%;
+object-fit: cover;
+margin-left: 1rem;
+user-select: none;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+header .profile-img:hover {
+transform: scale(1.05);
+box-shadow: 0 0 6px rgba(255,255,255,0.6);
+}
+
+/* Navigation */
+nav {
+background-color: #f0f0f0;
+display: flex;
+justify-content: center;
+padding: 1rem 0;
+gap: 2rem;
+font-family: Arial, sans-serif;
+font-weight: 500;
+font-size: 1rem;
+color: #264823;
+}
+nav a {
+padding: 0.5rem 1.5rem;
+border-radius: 9999px;
+transition: background-color 0.3s ease;
+}
+nav a.active,
+nav a:hover {
+background-color: #264823;
+color: white;
+}
+
+/* Hero section */
+.hero {
+position: relative;
+background-image: url('https://2.bp.blogspot.com/-BIRI2Poh8lA/WJ5p7VAkteI/AAAAAAAAABM/Ko4jFGREM5sHsojM-0U7Skz3JjQM-YmdgCLcB/s1600/img_2226.jpg');
+background-size: cover;
+background-position: center;
+color: white;
+text-align: center;
+padding: 8rem 1rem 6rem;
+font-family: Georgia, serif;
+height: 70vh;
+}
+
+.hero::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.45);
+z-index: 0;
+}
+
+.hero h1 {
+font-size: 3rem;
+font-weight: 400;
+text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+margin-bottom: 1rem;
+position: relative;
+z-index: 1;
+}
+.hero p {
+font-size: 1.1rem;
+max-width: 600px;
+margin: 0 auto;
+position: relative;
+z-index: 1;
+text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+/* Tagline section */
+.tagline {
+background-color: #f0f0f0;
+text-align: center;
+padding: 3rem 1rem 2rem;
+font-family: Georgia, serif;
+font-size: 1.5rem;
+font-weight: 400;
+color: #304030;
+line-height: 1.3;
+max-width: 640px;
+margin: 0 auto 2rem;
+}
+
+/* Gallery */
+.gallery {
+display: flex;
+justify-content: center;
+gap: 1.5rem;
+padding-bottom: 3rem;
+max-width: 900px;
+margin: 0 auto;
+}
+
+.image-box {
+width: 320px;
+height: 220px;
+border-radius: 10px;
+overflow: hidden;
+}
+
+.image-box img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 10px;
+display: block;
+box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.resort-description {
+max-width: 900px;
+margin: 2rem auto;
+padding: 1.5rem;
+text-align: center;
+font-family: Georgia, serif;
+font-size: 1.05rem;
+line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+.gallery {
+flex-direction: column;
+align-items: center;
+}
+.image-box {
+width: 90vw;
+height: 55vw;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="brand">Yabut River Resort</div>
+<div style="display:flex; align-items:center;">
+<div class="location" aria-label="Location: Calaca Batangas">
+<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+Location: Calaca Batangas
+</div>
+<!-- ✅ Clickable profile -->
+<a href="profile.html" class="profile-link">
+<img src="https://tse1.mm.bing.net/th/id/OIP.XkoEzwsMvgsXyZllfS9L4wHaJQ?rs=1&pid=ImgDetMain&o=7&rm=3" alt="User profile" class="profile-img" />
+</a>
+</div>
+</header>
+
+<nav>
+<a href="home.html" class="active">Home</a>
+<a href="accommodation.html">Accommodation</a>
+<a href="activities.html">Activities</a>
+<a href="packages.html">Packages</a>
+</nav>
+
+<section class="hero">
+<h1>Welcome to Yabut River Resort</h1>
+<p>A riverside getaway where guests can relax, enjoy nature, and explore fun activities with family and friends.</p>
+</section>
+
+<section class="tagline">
+Reconnect with nature, relax<br>by the riverside.
+</section>
+
+<section class="gallery">
+<div class="image-box">
+<img src="https://scontent.fmnl4-7.fna.fbcdn.net/v/t1.15752-9/575370074_1550066209329241_251475577078976566_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_ohc=5Suy88aSzm8Q7kNvwHRkPQA&_nc_oc=AdkSPDH-qxDkfww4gGHeodKJO7PRHaacC072szv6Kh11OKxoK2Y3mZX6s0UmelxJZ9U&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&oh=03_Q7cD3wE2PX3m0bNcrLLELVHSMDSUmV0FW7k1urobIsh6UFwzlg&oe=69315DBD" alt="">
+</div>
+<div class="image-box">
+<img src="https://scontent.fmnl4-4.fna.fbcdn.net/v/t1.15752-9/566616349_1320901239313971_4297469388231867608_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_ohc=lv0jyBJEl1kQ7kNvwFZtTEx&_nc_oc=AdmCb4RH2ob4zgTjbjE9yGiWdCE7WS3nZR-rNt5HPRyTaXn_uonpFQCEhiqCp54mCEw&_nc_zt=23&_nc_ht=scontent.fmnl4-4.fna&oh=03_Q7cD3wFKHzqfLZFgKg03sUFprDqICbSE3mEimALMQwcmaX12yA&oe=69313BBA" alt="">
+</div>
+<div class="image-box">
+<img src="https://scontent.fmnl4-7.fna.fbcdn.net/v/t1.15752-9/575453670_809266348552539_2908103921454649363_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=9f807c&_nc_ohc=DMOJ7wPDRyMQ7kNvwE6nr3C&_nc_oc=AdnfN93wotFbS4UZFqTVG2NvvjTvxmiM21JKqKei9YGlt4Au3KWBO4qfEG83HQaetA4&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&oh=03_Q7cD3wHvyX64ulj1GJZQvUdBIx-RjfYjHtGhqTL3mso7M95G-w&oe=69315BFB" alt="">
+</div>
+</section>
+
+<div class="resort-description">
+<p style="color: #000000;">
+Yabut River Resort offers a tranquil riverside retreat characterized by lush natural scenery
+and refreshing waters ideal for relaxation and leisure. Guests can enjoy open cottages, picnic
+areas, and swimming spots that highlight the serene charm of the flowing river. It provides an
+inviting atmosphere for family gatherings, group outings, and quiet getaways, emphasizing
+simplicity, comfort, and a close connection to nature.
+</p>
+</div>
+
+</body>
+</html>

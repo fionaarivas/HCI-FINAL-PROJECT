@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sign Up</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { height: 100%; font-family: 'Montserrat', sans-serif; }
+body {
+background: url('https://2.bp.blogspot.com/-BIRI2Poh8lA/WJ5p7VAkteI/AAAAAAAAABM/Ko4jFGREM5sHsojM-0U7Skz3JjQM-YmdgCLcB/s1600/img_2226.jpg') no-repeat center center;
+background-size: cover; display: flex; justify-content: center; align-items: center;
+}
+.signup-card {
+background: rgba(0, 80, 0, 0.85); border-radius: 25px; width: 360px; padding: 55px 35px;
+box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); text-align: center; backdrop-filter: blur(8px);
+transition: transform 0.3s ease;
+}
+.signup-card:hover { transform: scale(1.02); }
+.signup-card h2 {
+color: #e0f2e9; margin-bottom: 35px; font-size: 28px;
+font-family: 'Playfair Display', serif; letter-spacing: 1px;
+}
+.signup-card input {
+padding: 18px 22px; margin-bottom: 20px;
+border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 50px;
+font-size: 16px; font-weight: 500; outline: none;
+background-color: rgba(255, 255, 255, 0.15); color: #ffffff;
+transition: background 0.3s, border 0.3s, transform 0.2s, box-shadow 0.3s;
+width: 100%;
+}
+.signup-card input::placeholder { color: rgba(255, 255, 255, 0.7); }
+.signup-card input:focus {
+background-color: rgba(255, 255, 255, 0.25);
+border: 2px solid #4caf50; box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+transform: scale(1.02);
+}
+.signup-card button {
+padding: 16px 20px; border: none; border-radius: 50px;
+background: linear-gradient(45deg, #2e7d32, #4caf50);
+color: #fff; font-size: 16px; font-weight: bold;
+cursor: pointer; transition: background 0.3s, transform 0.2s;
+box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.signup-card button:hover {
+background: linear-gradient(45deg, #4caf50, #2e7d32);
+transform: translateY(-2px);
+}
+.signup-card .login-link {
+margin-top: 20px; color: rgba(224, 242, 233, 0.8); font-size: 14px;
+}
+.signup-card .login-link a {
+color: #a5d6a7; font-weight: bold; text-decoration: none; transition: color 0.3s ease;
+}
+.signup-card .login-link a:hover { color: #c8e6c9; }
+#toggleSignupPassword { position: absolute; right: 20px; top: 20px; cursor: pointer; color: white; font-size: 14px; }
+</style>
+</head>
+<body>
+
+<div class="signup-card">
+<h2>Create Account</h2>
+<form id="signupForm">
+<input type="text" id="username" placeholder="Username" required />
+<input type="email" id="email" placeholder="Email" required />
+<div style="position: relative;">
+<input type="password" id="password" placeholder="Password" required />
+<span id="toggleSignupPassword">👁️</span>
+</div>
+<button type="submit">Sign Up</button>
+</form>
+<p class="login-link">Already have an account? <a href="login.html">Login</a></p>
+</div>
+
+<script>
+const signupForm = document.getElementById("signupForm");
+const passwordField = document.getElementById("password");
+const toggle = document.getElementById("toggleSignupPassword");
+
+toggle.addEventListener("click", () => {
+const type = passwordField.type === "password" ? "text" : "password";
+passwordField.type = type;
+toggle.textContent = type === "password" ? "👁️" : "🙈";
+});
+
+signupForm.addEventListener("submit", (e) => {
+e.preventDefault();
+const username = document.getElementById("username").value;
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
+
+localStorage.setItem("username", username);
+localStorage.setItem("email", email);
+localStorage.setItem("password", password);
+
+alert("Account created successfully! Redirecting to login...");
+window.location.href = "login.html";
+});
+</script>
+</body>
+</html>

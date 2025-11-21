@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yabut River Resort - Profile Page</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #f7f5f5;
+    }
+
+    /* Header */
+    header {
+      background-color: #264823;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      font-family: Georgia, serif;
+      font-size: 18px;
+    }
+
+    header .brand {
+      font-weight: 500;
+      font-size: 1.25rem;
+    }
+
+    header .location {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 400;
+      user-select: none;
+    }
+
+    header .location svg {
+      width: 1rem;
+      height: 1rem;
+      fill: white;
+    }
+
+    /* Profile Section */
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 50px 80px;
+    }
+
+    .profile {
+        flex: 1;
+    }
+
+    .profile-pic {
+    width: 350px;                      /* slightly bigger */
+    height: 350px;                     /* slightly bigger */
+    border: 50%;                
+    object-fit: cover;                 /* fit the image nicely */
+    margin-bottom: 30px;
+    border: 3px solid #4a8f3b;        /* subtle green border */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* stronger shadow for depth */
+    background-color: #ddd;            /* fallback color */
+    position: relative;
+    left: 150px;                        /* shift slightly to the right */
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);            /* slight zoom on hover */
+}
+   
+    .back-btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #4a8f3b;
+        color: white;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #3c6536;
+        transform: scale(1.1);
+    }
+
+    .profile label {
+        display: block;
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .profile input {
+        border: none;
+        border-bottom: 1px solid #333;
+        background: none;
+        width: 250px;
+        margin-bottom: 10px;
+        font-size: 15px;
+        padding: 5px;
+    }
+
+    .profile input:focus {
+        outline: none;
+        border-bottom: 2px solid #223f1f;
+    }
+
+    .save-btn {
+        background-color: #223f1f;
+        color: white;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 20px;
+        margin-top: 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .save-btn:hover {
+        background-color: #3c6536;
+    }
+
+    /* Bookings Section */
+    .bookings {
+        background-color: #223f1f;
+        color: white;
+        border-radius: 20px;
+        width: 350px;
+        padding: 35px;
+        margin-top: 70px;
+    }
+
+    .bookings h2 {
+        margin: 0 0 10px 0;
+        border-bottom: 1px solid white;
+        padding-bottom: 15px;
+        font-size: 25px;
+    }
+
+    .booking-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 12px 0;
+        font-size: 15px;
+    }
+
+    .status {
+        padding: 5px 12px;
+        border-radius: 15px;
+        font-size: 14px;
+    }
+
+    .paid {
+        background-color: #4a8f3b;
+        color: white;
+    }
+
+    .pending {
+        background-color: white;
+        color: #223f1f;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="brand">Yabut River Resort</div>
+    <div class="location">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/>
+        </svg>
+        Location: Calaca Batangas
+    </div>
+</header>
+
+<div class="container">
+    <div class="profile">
+        <button class="back-btn">←</button>
+        <div class="profile-pic"></div>
+
+        <label>My profile</label>
+        <div style="display:flex; gap:20px;">
+            <input type="text" value="James Reid">
+            <input type="text" value="+56 956355367">
+        </div>
+        <input type="email" value="jamesreid@gmail.com"><br>
+        <button class="save-btn">Save</button>
+    </div>
+
+    <div class="bookings">
+        <h2>My bookings</h2>
+        <div class="booking-item">
+            <span>Family Package</span>
+            <span class="status pending">Pending</span>
+        </div>
+        <div class="booking-item">
+            <span>Boat Activity</span>
+            <span class="status paid">Paid</span>
+        </div>
+        <div class="booking-item">
+            <span>Parking</span>
+            <span class="status paid">Paid</span>
+        </div>
+        <div class="booking-item">
+            <span>Parking</span>
+            <span class="status pending">Pending</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

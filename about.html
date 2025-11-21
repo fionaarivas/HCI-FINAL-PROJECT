@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Yabut River Resort</title>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --nav-dark:#264823;
+      --nav-olive:#5b7a3f;
+      --pill-text:#e7f5d9;
+      --content-width:680px;
+      --accent:#9bd98b;
+      --muted-text:#dfe8d7;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:#fff;
+      background:#000;
+      line-height:1.5;
+    }
+
+    .topbar{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      height:64px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:0 28px;
+      background:var(--nav-dark);
+      z-index:30;
+      box-shadow:0 2px 10px rgba(0,0,0,0.35);
+    }
+    .brand{font-weight:600;color:var(--muted-text);font-size:18px;letter-spacing:0.2px}
+    nav ul{list-style:none;display:flex;gap:14px;align-items:center}
+
+    nav a{
+      position:relative;
+      display:inline-block;
+      color:var(--muted-text);
+      text-decoration:none;
+      padding:8px 14px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:14px;
+      transition:color .18s ease, transform .12s ease;
+      overflow:visible;
+      z-index:0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    nav a::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      left: 50%;
+      right: 50%;
+      background: rgba(255,255,255,0.04);
+      border-radius: 999px;
+      z-index: -1;
+      transform-origin: center;
+      transition: left .22s cubic-bezier(.2,.9,.2,1), right .22s cubic-bezier(.2,.9,.2,1), background .18s;
+    }
+
+    nav a:hover,
+    nav a:focus{
+      color: #fff;
+      transform: translateY(-2px);
+      outline: none;
+    }
+    nav a:hover::before,
+    nav a:focus::before{
+      left: 0;
+      right: 0;
+      background: rgba(155,217,139,0.06);
+    }
+
+    .nav-about{
+      background:var(--nav-olive);
+      color:var(--pill-text);
+    }
+    .nav-about::before{
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0);
+    }
+
+    nav a:focus-visible{
+      box-shadow: 0 0 0 4px rgba(155,217,139,0.14);
+      border-radius: 10px;
+    }
+
+    .btn-login{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.06);
+      padding:8px 14px;
+      border-radius:999px;
+      color:#e9f4d9;
+      font-weight:600;
+    }
+
+    .hero{
+      min-height:100vh;
+      padding-top:64px;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image: url("https://2.bp.blogspot.com/-BIRI2Poh8lA/WJ5p7VAkteI/AAAAAAAAABM/Ko4jFGREM5sHsojM-0U7Skz3JjQM-YmdgCLcB/s1600/img_2226.jpg");
+      background-size:cover;
+      background-position:center center;
+      filter:brightness(.78);
+      z-index:1;
+      transform:scale(1.02);
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:2;
+      background: linear-gradient(90deg, rgba(12,20,10,0.72) 0%, rgba(12,20,10,0.45) 25%, rgba(12,20,10,0.12) 50%, rgba(12,20,10,0) 100%);
+      pointer-events:none;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:5;
+      max-width:var(--content-width);
+      padding:60px 28px;
+    }
+
+    h1.title{
+      font-family:"Playfair Display", serif;
+      font-weight:900;
+      font-size:72px;
+      line-height:0.9;
+      margin-bottom:18px;
+      letter-spacing:2px;
+      color:#fff;
+      text-transform:uppercase;
+      text-shadow:0 6px 20px rgba(0,0,0,0.5);
+    }
+
+    p.lead{
+      max-width:620px;
+      color:rgba(255,255,255,0.92);
+      font-size:18px;
+      font-weight:300;
+      line-height:1.8;
+      opacity:0.95;
+      padding-right:6px;
+      text-shadow:0 1px 2px rgba(0,0,0,0.35);
+    }
+
+  </style>
+</head>
+<body>
+
+  <header class="topbar" role="banner">
+    <div class="brand" aria-label="Yabut River Resort">Yabut River Resort</div>
+
+    <nav role="navigation" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="nav-about" href="about.html" aria-current="page">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="btn-login" href="login.html">Log in</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="about-title">
+      <div class="hero-content">
+        <h1 id="about-title" class="title">About Us</h1>
+        <p class="lead">
+          Yabut River Resort is a peaceful riverside getaway where guests can unwind and enjoy the beauty of nature.
+          Our resort offers a variety of activities perfect for families and friends. Whether you want to relax by the river
+          or explore fun adventures, there's something for everyone. Come and create unforgettable memories in a serene and welcoming environment.
+        </p>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

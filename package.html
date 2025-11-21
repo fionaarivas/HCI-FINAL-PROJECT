@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yabut River Resort</title>
+  <style>
+    /* Reset and base */
+    body, h1, h2, p, ul, li, nav, header, section {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Georgia, serif;
+      color: #ffffff;
+    }
+    body {
+      background-color: #f0f0f0;
+      line-height: 1.5;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+    ul {
+      list-style: none;
+    }
+
+    /* Header styles */
+    header {
+      background-color: #264823;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+    }
+    header .brand {
+      font-weight: 500;
+      font-family: Georgia, serif;
+      font-size: 1.25rem;
+    }
+    header .location {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 400;
+      user-select: none;
+    }
+    header .location svg {
+      width: 1rem;
+      height: 1rem;
+      fill: white;
+    }
+    header .profile-img {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-left: 1rem;
+      user-select: none;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+      gap: 2rem;
+      font-family: Arial, sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+      color: #264823;
+    }
+    nav a {
+      padding: 0.5rem 1.5rem;
+      border-radius: 9999px;
+      transition: background-color 0.3s ease;
+    }
+    nav a.active,
+    nav a:hover {
+      background-color: #264823;
+      color: white;
+    }
+
+    /* Hero section */
+    .hero {
+      position: relative;
+      background-image: url('https://2.bp.blogspot.com/-BIRI2Poh8lA/WJ5p7VAkteI/AAAAAAAAABM/Ko4jFGREM5sHsojM-0U7Skz3JjQM-YmdgCLcB/s1600/img_2226.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 8rem 1rem 6rem;
+      font-family: Georgia, serif;
+      height: 60vh;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.45);
+      z-index: 0;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 400;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+
+    
+
+    /* Tagline section */
+    .tagline {
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #304030;
+      line-height: 1.3;
+      max-width: 640px;
+      margin: 0 auto 2rem;
+    }
+
+    /* Gallery FIXED image box */
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding-bottom: 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+
+    .image-box {
+      width: 320px;
+      height: 220px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .resort-description {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+
+  
+}
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+      .image-box {
+        width: 90vw;
+        height: 55vw;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">Yabut River Resort</div>
+    <div style="display:flex; align-items:center;">
+      <div class="location" aria-label="Location: Calaca Batangas">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+        Location: Calaca Batangas
+      </div>
+      <img src="https://i.imgur.com/4N8K4QG.png" alt="User profile" class="profile-img" />
+    </div>
+  </header>
+
+  <nav>
+  <a href="home.html">Home</a>
+  <a href="accommodation.html">Accomodation</a>
+  <a href="activity.html">Activities</a>
+  <a href="package.html" class="active">Packages</a>
+</nav>
+
+<section class="hero">
+  <div style="position:absolute; top:200px; left:50px; color:white; 
+              font-family: 'Playfair Display', serif; font-size:45px; 
+              line-height:1.2; font-weight:500;">
+    Comfortable Rooms & Villas <br> For a Relaxing Stay
+  </div>
+</section>
+
+
+<h2 style="font-family: 'Playfair Display', serif; font-size:24px; margin:40px 60px 20px; color:#264823;">Available Accommodations</h2>
+
+<section style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:30px; padding:0 60px 50px;">
+  <!-- Accommodation Card 1 -->
+  <div style="background:white; border:1px solid #223f1f; border-radius:10px; overflow:hidden; box-shadow:0 3px 6px rgba(0,0,0,0.05); transition:0.3s;">
+    <img src="https://images.unsplash.com/photo-1578898884733-7a1c0d3c1d02?auto=format&fit=crop&w=800&q=80" alt="Riverside Room" style="width:100%; height:180px; object-fit:cover;">
+    <div style="padding:15px;">
+      <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600; margin-bottom:5px;">Riverside Room</div>
+      <div style="font-size:13px; color:#555; margin-bottom:10px; min-height:45px;">
+        Cozy riverside room ideal for couples or solo travelers, featuring modern amenities and relaxing views.
+      </div>
+      <div>
+        <span style="color:#f2c94c; font-size:16px;">★ ★ ★ ★ ★</span>
+        <span style="font-weight:bold; font-size:15px; float:right;">₱ 5,000</span>
+      </div>
+      <button style="display:inline-block; background-color:#223f1f; color:white; padding:6px 18px; border:none; border-radius:20px; font-size:13px; cursor:pointer; margin-top:8px; transition:0.3s;">View details</button>
+    </div>
+  </div>
+
+  <!-- Accommodation Card 2 -->
+  <div style="background:white; border:1px solid #223f1f; border-radius:10px; overflow:hidden; box-shadow:0 3px 6px rgba(0,0,0,0.05); transition:0.3s;">
+    <img src="https://images.unsplash.com/photo-1560448070-1b3f3fc332a8?auto=format&fit=crop&w=800&q=80" alt="Garden Villa" style="width:100%; height:180px; object-fit:cover;">
+    <div style="padding:15px;">
+      <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600; margin-bottom:5px;">Garden Villa</div>
+      <div style="font-size:13px; color:#555; margin-bottom:10px; min-height:45px;">
+        Spacious villa surrounded by lush gardens, perfect for families seeking comfort and tranquility.
+      </div>
+      <div>
+        <span style="color:#f2c94c; font-size:16px;">★ ★ ★ ★ ★</span>
+        <span style="font-weight:bold; font-size:15px; float:right;">₱ 8,000</span>
+      </div>
+      <button style="display:inline-block; background-color:#223f1f; color:white; padding:6px 18px; border:none; border-radius:20px; font-size:13px; cursor:pointer; margin-top:8px; transition:0.3s;">View details</button>
+    </div>
+  </div>
+
+  <!-- Accommodation Card 3 -->
+  <div style="background:white; border:1px solid #223f1f; border-radius:10px; overflow:hidden; box-shadow:0 3px 6px rgba(0,0,0,0.05); transition:0.3s;">
+    <img src="https://images.unsplash.com/photo-1501117716987-c8e36f83f7c5?auto=format&fit=crop&w=800&q=80" alt="Family Room" style="width:100%; height:180px; object-fit:cover;">
+    <div style="padding:15px;">
+      <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600; margin-bottom:5px;">Family Room</div>
+      <div style="font-size:13px; color:#555; margin-bottom:10px; min-height:45px;">
+        Perfect for family stays, featuring cozy beds, modern amenities, and a relaxing riverside view.
+      </div>
+      <div>
+        <span style="color:#f2c94c; font-size:16px;">★ ★ ★ ★ ★</span>
+        <span style="font-weight:bold; font-size:15px; float:right;">₱ 6,500</span>
+      </div>
+      <button style="display:inline-block; background-color:#223f1f; color:white; padding:6px 18px; border:none; border-radius:20px; font-size:13px; cursor:pointer; margin-top:8px; transition:0.3s;">View details</button>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
