@@ -53,23 +53,38 @@
     .profile {
         flex: 1;
     }
-
+header .profile-link {
+display: inline-block;
+}
+header .profile-img {
+width: 2rem;
+height: 2rem;
+border-radius: 50%;
+object-fit: cover;
+margin-left: 1rem;
+user-select: none;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+header .profile-img:hover {
+transform: scale(1.05);
+box-shadow: 0 0 6px rgba(255,255,255,0.6);
+}
     .profile-pic {
-    width: 350px;                      /* slightly bigger */
-    height: 350px;                     /* slightly bigger */
+    width: 350px;
+    height: 350px;
     border: 50%;                
-    object-fit: cover;                 /* fit the image nicely */
+    object-fit: cover;
     margin-bottom: 30px;
-    border: 3px solid #4a8f3b;        /* subtle green border */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* stronger shadow for depth */
-    background-color: #ddd;            /* fallback color */
+    border: 3px solid #4a8f3b;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    background-color: #ddd;
     position: relative;
-    left: 150px;                        /* shift slightly to the right */
+    left: 150px;
     transition: transform 0.3s ease;
 }
 
 .profile-pic:hover {
-    transform: scale(1.05);            /* slight zoom on hover */
+    transform: scale(1.05);
 }
    
     .back-btn {
@@ -217,6 +232,13 @@
         </div>
     </div>
 </div>
+
+<!-- BACK BUTTON SCRIPT -->
+<script>
+document.querySelector(".back-btn").addEventListener("click", function() {
+    window.location.href = "home.html"; 
+});
+</script>
 
 </body>
 </html>
