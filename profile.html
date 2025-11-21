@@ -70,21 +70,21 @@ transform: scale(1.05);
 box-shadow: 0 0 6px rgba(255,255,255,0.6);
 }
     .profile-pic {
-    width: 350px;
-    height: 350px;
+    width: 350px;                      /* slightly bigger */
+    height: 350px;                     /* slightly bigger */
     border: 50%;                
-    object-fit: cover;
+    object-fit: cover;                 /* fit the image nicely */
     margin-bottom: 30px;
-    border: 3px solid #4a8f3b;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-    background-color: #ddd;
+    border: 3px solid #4a8f3b;        /* subtle green border */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* stronger shadow for depth */
+    background-color: #ddd;            /* fallback color */
     position: relative;
-    left: 150px;
+    left: 150px;                        /* shift slightly to the right */
     transition: transform 0.3s ease;
 }
 
 .profile-pic:hover {
-    transform: scale(1.05);
+    transform: scale(1.05);            /* slight zoom on hover */
 }
    
     .back-btn {
@@ -101,7 +101,9 @@ box-shadow: 0 0 6px rgba(255,255,255,0.6);
         border: none;
         transition: background-color 0.3s ease, transform 0.2s ease;
         margin-bottom: 20px;
+        text-decoration: none;
     }
+
     .back-btn:hover {
         background-color: #3c6536;
         transform: scale(1.1);
@@ -200,7 +202,13 @@ box-shadow: 0 0 6px rgba(255,255,255,0.6);
 
 <div class="container">
     <div class="profile">
-        <button class="back-btn">←</button>
+
+        <!-- ⭐⭐⭐ THIS IS THE WORKING BACK BUTTON ⭐⭐⭐ -->
+        <a href="javascript:history.back()" class="back-btn">←</a>
+
+       
+
+
         <div class="profile-pic"></div>
 
         <label>My profile</label>
