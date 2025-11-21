@@ -53,6 +53,24 @@
       height: 1rem;
       fill: white;
     }
+
+    header .profile-link {
+    display: inline-block;
+    }
+    header .profile-img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 1rem;
+    user-select: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+header .profile-img:hover {
+transform: scale(1.05);
+box-shadow: 0 0 6px rgba(255,255,255,0.6);
+}
+
     header .profile-img {
       width: 2rem;
       height: 2rem;
@@ -204,7 +222,9 @@
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
         Location: Calaca Batangas
       </div>
-      <img src="https://i.imgur.com/4N8K4QG.png" alt="User profile" class="profile-img" />
+      <a href="profile.html" class="profile-link">
+       <img src="https://tse1.mm.bing.net/th/id/OIP.XkoEzwsMvgsXyZllfS9L4wHaJQ?rs=1&pid=ImgDetMain&o=7&rm=3" alt="User profile" class="profile-img" />
+      </a>
     </div>
   </header>
 
