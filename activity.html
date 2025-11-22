@@ -53,6 +53,24 @@
       height: 1rem;
       fill: white;
     }
+
+    header .profile-link {
+    display: inline-block;
+    }
+    header .profile-img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 1rem;
+    user-select: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+header .profile-img:hover {
+transform: scale(1.05);
+box-shadow: 0 0 6px rgba(255,255,255,0.6);
+}
+
     header .profile-img {
       width: 2rem;
       height: 2rem;
@@ -201,6 +219,7 @@
         </svg>
         Location: Calaca Batangas
       </div>
+<<<<<<< HEAD
 
       <!-- CLICKABLE PROFILE ICON -->
       <a href="profile.html">
@@ -210,6 +229,11 @@
              style="cursor:pointer;" />
       </a>
 
+=======
+      <a href="profile.html" class="profile-link">
+       <img src="https://tse1.mm.bing.net/th/id/OIP.XkoEzwsMvgsXyZllfS9L4wHaJQ?rs=1&pid=ImgDetMain&o=7&rm=3" alt="User profile" class="profile-img" />
+      </a>
+>>>>>>> d8d13ef2534dc461144d0aa17449282fac78fa48
     </div>
   </header>
 
