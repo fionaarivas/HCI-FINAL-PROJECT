@@ -10,7 +10,7 @@
     margin: 0; padding: 0; box-sizing: border-box;
   }
   body {
-    font-family: 'Times New Roman', Times, serif,Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif, Arial, sans-serif;
     background: #e5e0dc;
     color: #1d1d1d;
     line-height: 1.5;
@@ -59,6 +59,15 @@
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 36px;
+  }
+
+  /* Back arrow above images */
+  .back-arrow {
+    cursor: pointer;
+    font-size: 24px;
+    margin-bottom: 12px;
+    display: inline-block;
+    color: #0f3e1b;
   }
 
   /* Left content */
@@ -113,14 +122,15 @@
 
   /* Booking box */
   .booking-box {
-  background: #f3f1ec;
-  padding: 40px 24px 10px;  /* TOP, LEFT/RIGHT, BOTTOM increased */
-  border: 1px solid #b1cc9b;
-  font-size: 15px;
-  display: flex;
-  flex-direction: column;
-  height: 350px;
-}
+    background: #f3f1ec;
+    padding: 40px 24px 10px;  
+    border: 1px solid #b1cc9b;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    position: relative;
+  }
   .price {
     font-weight: 700;
     font-size: 22px;
@@ -197,6 +207,16 @@
     text-transform: capitalize;
   }
 
+  .confirmation {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: green;
+    font-weight: 700;
+    text-align: center;
+    font-size: 14px;
+  }
 
 </style>
 </head>
@@ -214,15 +234,15 @@
 
 <main>
   <section class="left-col">
+    <span class="back-arrow" onclick="window.history.back()">←</span>
     <h1>Big Family Room</h1>
     <div class="images">
-      <img class="big-img" src="https://i.ibb.co/Z7VFtZM/big-family-room1.jpg" alt="Big Family Room main" />
+      <img class="big-img" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/532505664.jpg?k=186a14b53cc7fdee3f26fd7fd1f11d8577440154fe34b68455c98741c6950893&o=" alt="Big Family Room main" />
       <div class="right-images">
-        <img src="https://i.ibb.co/VJBbgvF/big-family-room2.jpg" alt="Bathroom" />
-        <img src="https://i.ibb.co/SXBpqQq/big-family-room3.jpg" alt="Dining area" />
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/532505664.jpg?k=186a14b53cc7fdee3f26fd7fd1f11d8577440154fe34b68455c98741c6950893&o=" alt="Bathroom" />
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/532505664.jpg?k=186a14b53cc7fdee3f26fd7fd1f11d8577440154fe34b68455c98741c6950893&o=" alt="Dining area" />
       </div>
     </div>
-
     <div class="description">
       <p>A spacious and cozy space ideal for family gatherings and relaxation. It’s perfect for bonding, entertainment, and creating lasting memories together.</p>
       <ul>
@@ -240,14 +260,18 @@
     <div class="booking-row">
       <div class="booking-col">
         <label for="checkin">Check in</label>
-        <select id="checkin" name="checkin" aria-describedby="checkin-desc">
+        <select id="checkin" name="checkin">
           <option value="2025-06-23" selected>6/23/2025</option>
+          <option value="2025-06-24">6/24/2025</option>
+          <option value="2025-06-25">6/25/2025</option>
         </select>
       </div>
       <div class="booking-col">
         <label for="checkout">Check out</label>
-        <select id="checkout" name="checkout" aria-describedby="checkout-desc">
+        <select id="checkout" name="checkout">
           <option value="2025-06-26" selected>6/26/2025</option>
+          <option value="2025-06-27">6/27/2025</option>
+          <option value="2025-06-28">6/28/2025</option>
         </select>
       </div>
     </div>
@@ -255,7 +279,10 @@
     <div class="guests-select">
       <label for="guests">Guests</label>
       <select id="guests" name="guests">
+        <option value="4">4 guests</option>
         <option value="6" selected>6 guests</option>
+        <option value="8">8 guests</option>
+        <option value="10">10 guests</option>
       </select>
     </div>
 
@@ -270,8 +297,22 @@
       Total
     </div>
 
-    <button type="button" class="reserve-btn">Reserve</button>
+    <button class="reserve-btn" onclick="confirmReservation()">Reserve</button>
+    <div class="confirmation" id="confirmation"></div>
   </aside>
 </main>
+
+<script>
+function confirmReservation() {
+    // Show confirmation message
+    const confirmationDiv = document.getElementById('confirmation');
+    confirmationDiv.textContent = "✅ Your reservation has been successfully made!";
+
+    // After 2 seconds, redirect to home page
+    setTimeout(() => {
+        window.location.href = 'home.html'; // change to your home page URL
+    }, 2000);
+}
+</script>
 </body>
 </html>

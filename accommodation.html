@@ -1,230 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yabut River Resort</title>
-  <style>
-    /* Reset and base */
-    body, h1, h2, p, ul, li, nav, header, section {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Georgia, serif;
-      color: #ffffff;
-    }
-    body {
-      background-color: #f0f0f0;
-      line-height: 1.5;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-      cursor: pointer;
-    }
-    ul {
-      list-style: none;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Yabut River Resort</title>
+<style>
+  /* Reset */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background-color: #f0f0f0;
+    color: #111;
+    line-height: 1.5;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 
-    /* Header styles */
-    header {
-      background-color: #264823;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.75rem 1.5rem;
-      font-size: 0.9rem;
-    }
-    header .brand {
-      font-weight: 500;
-      font-family: Georgia, serif;
-      font-size: 1.25rem;
-    }
-    header .location {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-weight: 400;
-      user-select: none;
-    }
-    header .location svg {
-      width: 1rem;
-      height: 1rem;
-      fill: white;
-    }
-    header .profile-img {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-left: 1rem;
-      user-select: none;
-    }
-
-    /* Navigation */
-    nav {
-      background-color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      padding: 1rem 0;
-      gap: 2rem;
-      font-family: Arial, sans-serif;
-      font-weight: 500;
-      font-size: 1rem;
-      color: #264823;
-    }
-    nav a {
-      padding: 0.5rem 1.5rem;
-      border-radius: 9999px;
-      transition: background-color 0.3s ease;
-    }
-    nav a.active,
-    nav a:hover {
-      background-color: #264823;
-      color: white;
-    }
-    
-
-    /* Hero section */
-    .hero {
-      position: relative;
-      background-image: url('https://2.bp.blogspot.com/-BIRI2Poh8lA/WJ5p7VAkteI/AAAAAAAAABM/Ko4jFGREM5sHsojM-0U7Skz3JjQM-YmdgCLcB/s1600/img_2226.jpg');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      text-align: center;
-      padding: 8rem 1rem 6rem;
-      font-family: Georgia, serif;
-      height: 60vh;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.45);
-      z-index: 0;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 400;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-      margin-bottom: 1rem;
-      position: relative;
-      z-index: 1;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-    }
-
-    
-
-    /* Tagline section */
-    .tagline {
-      background-color: #f0f0f0;
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-      font-family: Georgia, serif;
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: #304030;
-      line-height: 1.3;
-      max-width: 640px;
-      margin: 0 auto 2rem;
-    }
-
-    /* Gallery FIXED image box */
-    .gallery {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      padding-bottom: 3rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-
-    .image-box {
-      width: 320px;
-      height: 220px;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .image-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 10px;
-      display: block;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-    .card-container {
+  /* Header */
+  header {
+    background-color: #264823;
+    color: white;
     display: flex;
-    flex-wrap: nowrap;
     justify-content: space-between;
-}
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  header .brand {
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
+  header .location {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 400;
+  }
+  header .location svg {
+    width: 1rem;
+    height: 1rem;
+    fill: white;
+  }
+  header .profile-img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 1rem;
+  }
 
-.room-card,
-.cottage-card {
-    flex: 1 1 0; 
-    max-width: 90px;
-}
+  /* Navigation */
+  nav {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    gap: 2rem;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #264823;
+  }
+  nav a {
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    transition: background-color 0.3s ease;
+  }
+  nav a.active,
+  nav a:hover {
+    background-color: #264823;
+    color: white;
+  }
 
+  /* Hero section */
+  .hero {
+    position: relative;
+    background-image: url('https://2.bp.blogspot.com/-BIRI2Poh8lA/WJ5p7VAkteI/AAAAAAAAABM/Ko4jFGREM5sHsojM-0U7Skz3JjQM-YmdgCLcB/s1600/img_2226.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 8rem 1rem 6rem;
+    font-family: Georgia, serif;
+    height: 60vh;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.45);
+    z-index: 0;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+  }
 
-    .resort-description {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  text-align: center;
-  font-family: Georgia, serif;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  /* Cards Section */
+  .cards-container {
+    max-width: 1570px;
+    margin: 0 auto 3rem;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    align-items: center;
+  }
 
-  
-}
+  .card {
+    background: white;
+    border: 2px solid #223f1f;
+    border-radius: 12px;
+    padding: 1rem;
+    padding-top: 1rem; 
+    width: 280px;
+    height: 280px; /* set to square size */
+    flex: 0 0 280px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.2rem; /* keep tight for space */
+  }
 
-    /* Responsive */
-    @media (max-width: 720px) {
-      .gallery {
-        flex-direction: column;
-        align-items: center;
-      }
-      .image-box {
-        width: 90vw;
-        height: 55vw;
-      }
+  .card img {
+    width: 100%;
+    height: 200px; /* adjusted to fit within square card */
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+  }
+
+  /* New wrapper for images */
+  .img-wrapper {
+    width: 100%;
+    height: 200px; /* matched to img height */
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .card-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-top: 0.1rem;
+    margin-bottom: 0rem;
+    line-height: 1.2;
+  }
+  .card-description {
+    font-size: 0.7rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    line-height: 1.1;
+  }
+  .price-rating-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .price {
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  .stars {
+    color: #f2c94c;
+    font-size: 1rem;
+  }
+  .btn-details {
+    background-color: #223f1f;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s ease;
+    margin-top: 0;
+  }
+  .btn-details:hover {
+    background-color: #1b2a10;
+  }
+
+  h2.section-title {
+    max-width: 900px;
+    margin: 40px 0 10px 60px;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #264823;
+  }
+
+  /* Carousel Wrapper & Arrows */
+  .carousel-wrapper {
+    position: relative;
+    max-width: 1160px;
+    margin: 3rem auto;
+    margin-bottom: 70px;
+    margin-top: 2rem;
+  }
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background-color: rgba(34, 63, 31, 0.85);
+    color: white;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: 0.2s ease;
+  }
+  .arrow.left  { left: -50px; }  
+  .arrow.right { right: -50px; }
+  .arrow:hover {
+    background-color: rgba(22, 42, 20, 0.95);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  @media (max-width: 720px) {
+    .cards-container {
+      justify-content: center;
+      gap: 1rem;
     }
-  </style>
+    .card {
+      max-width: 90vw;
+      min-width: auto;
+    }
+  }
+</style>
 </head>
-
 <body>
 
-  <header>
-    <div class="brand">Yabut River Resort</div>
-    <div style="display:flex; align-items:center;">
-      <div class="location" aria-label="Location: Calaca Batangas">
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
-        Location: Calaca Batangas
-      </div>
-      <a href="profile.html">
-  <img src="https://i.pinimg.com/474x/29/0f/f4/290ff47027c529ee3ff4aaf7d4075bea.jpg" alt="User profile" class="profile-img" />
-</a>
-
+<header>
+  <div class="brand">Yabut River Resort</div>
+  <div style="display:flex; align-items:center;">
+    <div class="location" aria-label="Location: Calaca Batangas">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+      Location: Calaca Batangas
     </div>
-  </header>
+    <img src="https://i.imgur.com/4N8K4QG.png" alt="User profile" class="profile-img" />
+  </div>
+</header>
 
-  <nav>
+<nav>
   <a href="home.html">Home</a>
   <a href="accommodation.html" class="active">Accomodation</a>
   <a href="activity.html">Activities</a>
@@ -234,145 +279,169 @@
 <section class="hero">
   <div style="position:absolute; top:200px; left:50px; color:white; 
               font-family: 'Playfair Display', serif; font-size:45px; 
-              line-height:1.2; font-weight:500;">
+              line-height:1.2; font-weight:500; z-index:1;">
     Comfortable Rooms & Villas <br> For a Relaxing Stay
   </div>
 </section>
 
-
-<h2 style="font-family: 'Playfair Display', serif; font-size:24px; margin:40px 60px 20px; color:#264823;">
-  Available Rooms
-</h2>
-
-<section style="
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-  gap: 30px; 
-  padding: 0 60px 50px;
-">
-  <!-- CARD 1 -->
-  <div style="background:white; border:1px solid #223f1f; border-radius:10px; overflow:hidden; box-shadow:0 3px 6px rgba(0,0,0,0.05); transition:0.3s;">
-    <img src="https://picfiles.alphacoders.com/282/282461.jpg"
-      alt="Riverside Room" style="width:100%; height:180px; object-fit:cover;">
-    <div style="padding:15px;">
-      <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600; margin-bottom:5px;">Riverside Room</div>
-      <div style="font-size:13px; color:#555; margin-bottom:10px; min-height:45px;">
-        Cozy riverside room ideal for couples or solo travelers, featuring modern amenities and relaxing views.
+<h2 class="section-title">Available Rooms</h2>
+<div class="carousel-wrapper">
+  <button class="arrow left">‹</button>
+  <div class="cards-container">
+    <!-- CARD 1 -->
+    <article class="card">
+      <div class="img-wrapper">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/532505664.jpg?k=186a14b53cc7fdee3f26fd7fd1f11d8577440154fe34b68455c98741c6950893&o=" alt="Family Room"/>
       </div>
-      <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600;">Family Room</div>
-      <div style="font-size:13px; color:#555; margin:5px 0 10px;">Spacious room ideal for families.</div>
-      <div>
-        <span style="color:#f2c94c; font-size:16px;">★ ★ ★ ★ ★</span>
-        <span style="font-weight:bold; font-size:15px; float:right;">₱ 5,000</span>
+      <div class="card-title">Family Room</div>
+      <p class="card-description">A spacious and cozy space ideal for family gatherings and relaxation.</p>
+      <div class="price-rating-row">
+        <div class="price">₱ 12,000</div>
+        <div class="stars">★★★★★</div>
       </div>
-      <button style="display:inline-block; background-color:#223f1f; color:white; padding:6px 18px; border:none; border-radius:20px; font-size:13px; cursor:pointer; margin-top:8px; transition:0.3s;">View details</button>
-    </div>
+     <a href="family.html">
+  <button class="btn-details">View details</button>
+</a>
+    </article>
+
+    <!-- CARD 2 -->
+    <article class="card">
+      <div class="img-wrapper">
+        <img src="https://cdn.getaway.ph/wp-content/uploads/2018/06/FV-Antique-Room-2.jpg" alt="Antique Room"/>
+      </div>
+      <div class="card-title">Antique Room</div>
+      <p class="card-description">Timeless elegance blending heritage charm and vintage style.</p>
+      <div class="price-rating-row">
+        <div class="price">₱ 2,500</div>
+        <div class="stars">★★★★★</div>
+      </div>
+       <a href="antique.html">
+  <button class="btn-details">View details</button>
+</a>
+    </article>
+
+    <!-- CARD 3 -->
+    <article class="card">
+      <div class="img-wrapper">
+        <img src="https://www.meralco.com.ph/app/uploads/reina-rooms.jpg" alt="Reina Room"/>
+      </div>
+      <div class="card-title">Reina Room</div>
+      <p class="card-description">Spacious, elegant, surrounded by nature, blending modern Filipino aesthetics.</p>
+      <div class="price-rating-row">
+        <div class="price">₱ 3,600</div>
+        <div class="stars">★★★★☆</div>
+      </div>
+       <a href="reina.html">
+  <button class="btn-details">View details</button>
+</a>
+    </article>
+
+    <!-- CARD 4 -->
+    <article class="card">
+      <div class="img-wrapper">
+        <img src="https://www.meralco.com.ph/app/uploads/reina-rooms.jpg" alt="Reina Room"/>
+      </div>
+      <div class="card-title">King Room</div>
+      <p class="card-description">Spacious, elegant, surrounded by nature, blending modern Filipino aesthetics.</p>
+      <div class="price-rating-row">
+        <div class="price">₱ 3,600</div>
+        <div class="stars">★★★★☆</div>
+      </div>
+       <a href="king.html">
+  <button class="btn-details">View details</button>
+</a>
+    </article>
   </div>
+  <button class="arrow right">›</button>
+</div>
 
-  <!-- CARD 2 -->
-  <div style="background:white; border:1px solid #223f1f; border-radius:10px; overflow:hidden; box-shadow:0 3px 6px rgba(0,0,0,0.05); transition:0.3s;">
-    <img src="https://picfiles.alphacoders.com/282/282461.jpg" alt="Garden Villa" style="width:100%; height:180px; object-fit:cover;">
-    <div style="padding:15px;">
-      <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600; margin-bottom:5px;">Garden Villa</div>
-      <div style="font-size:13px; color:#555; margin-bottom:10px; min-height:45px;">
-        Spacious villa surrounded by lush gardens, perfect for families seeking comfort and tranquility.
+<h2 class="section-title">Available Cottages</h2>
+<div class="carousel-wrapper">
+  <button class="arrow left">‹</button>
+  <div class="cards-container">
+    <!-- CARD 1 -->
+    <article class="card">
+      <div class="img-wrapper">
+        <img src="https://cdn.gracerealty.ph/media/gallery/1200/x/9/family-room-1.jpg" alt="Family Room"/>
       </div>
-      <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600;">Antique Room</div>
-      <div style="font-size:13px; color:#555; margin:5px 0 10px;">Classic wooden-style room.</div>
-      <div>
-        <span style="color:#f2c94c; font-size:16px;">★ ★ ★ ★ ★</span>
-        <span style="font-weight:bold; font-size:15px; float:right;">₱ 8,000</span>
+      <div class="card-title">Family Room</div>
+      <p class="card-description">A spacious and cozy space ideal for family gatherings and relaxation.</p>
+      <div class="price-rating-row">
+        <div class="price">₱ 12,000</div>
+        <div class="stars">★★★★★</div>
       </div>
-      <button style="display:inline-block; background-color:#223f1f; color:white; padding:6px 18px; border:none; border-radius:20px; font-size:13px; cursor:pointer; margin-top:8px; transition:0.3s;">View details</button>
-    </div>
+      <a href="family.html">
+  <button class="btn-details">View details</button>
+</a>
+    </article>
+
+    <!-- CARD 2 -->
+    <article class="card">
+      <div class="img-wrapper">
+        <img src="https://cdn.getaway.ph/wp-content/uploads/2018/06/FV-Antique-Room-2.jpg" alt="Antique Room"/>
+      </div>
+      <div class="card-title">Antique Room</div>
+      <p class="card-description">Timeless elegance blending heritage charm and vintage style.</p>
+      <div class="price-rating-row">
+        <div class="price">₱ 2,500</div>
+        <div class="stars">★★★★★</div>
+      </div>
+       <a href="family.html">
+  <button class="btn-details">View details</button>
+</a>
+    </article>
+
+    <!-- CARD 3 -->
+    <article class="card">
+      <div class="img-wrapper">
+        <img src="https://www.meralco.com.ph/app/uploads/reina-rooms.jpg" alt="Reina Room"/>
+      </div>
+      <div class="card-title">Reina Room</div>
+      <p class="card-description">Spacious, elegant, surrounded by nature, blending modern Filipino aesthetics.</p>
+      <div class="price-rating-row">
+        <div class="price">₱ 3,600</div>
+        <div class="stars">★★★★☆</div>
+      </div>
+       <a href="family.html">
+  <button class="btn-details">View details</button>
+</a>
+    </article>
+
+    <!-- CARD 4 -->
+    <article class="card">
+      <div class="img-wrapper">
+        <img src="https://www.meralco.com.ph/app/uploads/reina-rooms.jpg" alt="Reina Room"/>
+      </div>
+      <div class="card-title">Reina Room</div>
+      <p class="card-description">Spacious, elegant, surrounded by nature, blending modern Filipino aesthetics.</p>
+      <div class="price-rating-row">
+        <div class="price">₱ 3,600</div>
+        <div class="stars">★★★★☆</div>
+      </div>
+       <a href="family.html">
+  <button class="btn-details">View details</button>
+</a>
+    </article>
   </div>
+  <button class="arrow right">›</button>
+</div>
 
-  <!-- CARD 3 -->
-  <div style="background:white; border:1px solid #223f1f; border-radius:10px; overflow:hidden; box-shadow:0 3px 6px rgba(0,0,0,0.05); transition:0.3s;">
-    <img src="https://images.unsplash.com/photo-1501117716987-c8e36f83f7c5?auto=format&fit=crop&w=800&q=80" alt="Family Room" style="width:100%; height:180px; object-fit:cover;">
-    <div style="padding:15px;">
-      <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600; margin-bottom:5px;">Family Room</div>
-      <div style="font-size:13px; color:#555; margin-bottom:10px; min-height:45px;">
-        Perfect for family stays, featuring cozy beds, modern amenities, and a relaxing riverside view.
-      </div>
-      <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600;">Reina Room</div>
-      <div style="font-size:13px; color:#555; margin:5px 0 10px;">Minimalist room with complete amenities.</div>
-      <div>
-        <span style="color:#f2c94c; font-size:16px;">★ ★ ★ ★ ★</span>
-        <span style="font-weight:bold; font-size:15px; float:right;">₱ 6,500</span>
-      </div>
-      <button style="display:inline-block; background-color:#223f1f; color:white; padding:6px 18px; border:none; border-radius:20px; font-size:13px; cursor:pointer; margin-top:8px; transition:0.3s;">View details</button>
-    </div>
-  </div>
-</section>
+<script>
+const containers = document.querySelectorAll('.cards-container');
 
+containers.forEach(container => {
+  const leftArrow = container.parentElement.querySelector('.arrow.left');
+  const rightArrow = container.parentElement.querySelector('.arrow.right');
 
-<h2 style="font-family: 'Playfair Display', serif; font-size:24px; margin:40px 60px 20px; color:#264823;">
-  Available Rooms
-</h2>
+  leftArrow.addEventListener('click', () => {
+    container.scrollBy({ left: -300, behavior: 'smooth' });
+  });
 
-<section style="
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-  gap: 30px; 
-  padding: 0 60px 50px;
-">
-  <!-- CARD 1 -->
-  <div style="background:white; border:1px solid #223f1f; border-radius:10px; overflow:hidden; box-shadow:0 3px 6px rgba(0,0,0,0.05); transition:0.3s;">
-    <img src="https://picfiles.alphacoders.com/282/282461.jpg"
-      alt="Riverside Room" style="width:100%; height:180px; object-fit:cover;">
-    <div style="padding:15px;">
-      <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600; margin-bottom:5px;">Riverside Room</div>
-      <div style="font-size:13px; color:#555; margin-bottom:10px; min-height:45px;">
-        Cozy riverside room ideal for couples or solo travelers, featuring modern amenities and relaxing views.
-      </div>
-      <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600;">Family Room</div>
-      <div style="font-size:13px; color:#555; margin:5px 0 10px;">Spacious room ideal for families.</div>
-      <div>
-        <span style="color:#f2c94c; font-size:16px;">★ ★ ★ ★ ★</span>
-        <span style="font-weight:bold; font-size:15px; float:right;">₱ 5,000</span>
-      </div>
-      <button style="display:inline-block; background-color:#223f1f; color:white; padding:6px 18px; border:none; border-radius:20px; font-size:13px; cursor:pointer; margin-top:8px; transition:0.3s;">View details</button>
-    </div>
-  </div>
-
-  <!-- CARD 2 -->
-  <div style="background:white; border:1px solid #223f1f; border-radius:10px; overflow:hidden; box-shadow:0 3px 6px rgba(0,0,0,0.05); transition:0.3s;">
-    <img src="https://picfiles.alphacoders.com/282/282461.jpg" alt="Garden Villa" style="width:100%; height:180px; object-fit:cover;">
-    <div style="padding:15px;">
-      <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600; margin-bottom:5px;">Garden Villa</div>
-      <div style="font-size:13px; color:#555; margin-bottom:10px; min-height:45px;">
-        Spacious villa surrounded by lush gardens, perfect for families seeking comfort and tranquility.
-      </div>
-      <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600;">Antique Room</div>
-      <div style="font-size:13px; color:#555; margin:5px 0 10px;">Classic wooden-style room.</div>
-      <div>
-        <span style="color:#f2c94c; font-size:16px;">★ ★ ★ ★ ★</span>
-        <span style="font-weight:bold; font-size:15px; float:right;">₱ 8,000</span>
-      </div>
-      <button style="display:inline-block; background-color:#223f1f; color:white; padding:6px 18px; border:none; border-radius:20px; font-size:13px; cursor:pointer; margin-top:8px; transition:0.3s;">View details</button>
-    </div>
-  </div>
-
-  <!-- CARD 3 -->
-  <div style="background:white; border:1px solid #223f1f; border-radius:10px; overflow:hidden; box-shadow:0 3px 6px rgba(0,0,0,0.05); transition:0.3s;">
-    <img src="https://images.unsplash.com/photo-1501117716987-c8e36f83f7c5?auto=format&fit=crop&w=800&q=80" alt="Family Room" style="width:100%; height:180px; object-fit:cover;">
-    <div style="padding:15px;">
-      <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600; margin-bottom:5px;">Family Room</div>
-      <div style="font-size:13px; color:#555; margin-bottom:10px; min-height:45px;">
-        Perfect for family stays, featuring cozy beds, modern amenities, and a relaxing riverside view.
-      </div>
-      <div style="font-family: 'Playfair Display', serif; font-size:18px; font-weight:600;">Reina Room</div>
-      <div style="font-size:13px; color:#555; margin:5px 0 10px;">Minimalist room with complete amenities.</div>
-      <div>
-        <span style="color:#f2c94c; font-size:16px;">★ ★ ★ ★ ★</span>
-        <span style="font-weight:bold; font-size:15px; float:right;">₱ 6,500</span>
-      </div>
-      <button style="display:inline-block; background-color:#223f1f; color:white; padding:6px 18px; border:none; border-radius:20px; font-size:13px; cursor:pointer; margin-top:8px; transition:0.3s;">View details</button>
-    </div>
-  </div>
-</section>
-
+  rightArrow.addEventListener('click', () => {
+    container.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+});
+</script>
 
 </body>
 </html>
