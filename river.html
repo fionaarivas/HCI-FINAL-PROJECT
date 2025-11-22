@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Big Family Room</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #E5E0DC;
+        font-family: 'Times New Roman', Times, serif, Arial, sans-serif;
+    }
+
+    /* HEADER */
+    header {
+        background: #0F3E1B;
+        padding: 12px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #E4EBDD;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    header .location {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    header img {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-left: 15px;
+    }
+
+    /* BACK ICON */
+    .back-btn {
+        margin-left: 60px;
+        margin-top: 20px;
+        display: block;
+        font-size: 30px;
+        text-decoration: none;
+        color: #1d1d1d;
+    }
+
+    /* LAYOUT */
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 55px;
+        padding: 40px 60px;
+        align-items: start;
+    }
+
+    /* IMAGE AREA */
+    .room-image {
+        width: 100%;
+        height: auto;
+        border: 1px solid #bcb3aa;
+    }
+
+    /* TEXT AREA */
+    .details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 60px;
+        margin-top: -16px;
+    }
+
+    .details h1 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #1d1d1d;
+    }
+
+    .stars {
+        color: #ecc52d;
+        font-size: 30px;
+        letter-spacing: 2px;
+        margin-bottom: 1px;
+    }
+
+    .details p {
+        max-width: 420px;
+        margin: 14px 0;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    ul {
+        margin: 14px 0 22px;
+        padding-left: 20px;
+        font-size: 15px;
+    }
+
+    ul li {
+        margin-bottom: 6px;
+    }
+
+    .price-label {
+        font-size: 14px;
+        opacity: 0.7;
+    }
+
+    .price {
+        font-size: 32px;
+        font-weight: 800;
+        margin-top: 2px;
+        margin-left: 0;
+    }
+
+    /* BUTTON */
+    .book-btn {
+        margin-top: 15px;
+        padding: 12px 40px;
+        background: #0F3E1B;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 15px;
+        border-radius: 30px;
+        font-weight: 600;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <div>Yabut River Resort</div>
+    <div style="display:flex; align-items:center;">
+        <div class="location">Location: Calaca Batangas</div>
+        <img src="https://i.ibb.co/w6CYDDw/profile-cat.jpg" alt="Profile">
+    </div>
+</header>
+
+<a href="accommodation.html" class="back-btn">←</a>
+
+<div class="container">
+
+    <!-- LEFT IMAGE -->
+    <img src="https://picfiles.alphacoders.com/265/265560.jpg" class="room-image">
+
+    <!-- RIGHT DETAILS -->
+    <div class="details">
+
+        <div class="stars">★★★★★</div>
+
+        <h1>Big Family Room</h1>
+
+        <p>A spacious and cozy space ideal for family gatherings and relaxation. It’s perfect for bonding, entertainment, and creating lasting memories together.</p>
+
+        <ul>
+            <li>Good for 10 pax</li>
+            <li>With own comfort rooms, kitchen & dining area</li>
+            <li>5 Queen sized bed plus Extra pull out bed</li>
+            <li>With 10 towels</li>
+        </ul>
+
+        <div class="price-label">Starts From</div>
+        <div class="price">₱12,000</div>
+
+        <button class="book-btn" onclick="bookNow(this)">BOOK NOW</button>
+        <div id="confirmation" style="margin-top:10px; font-weight:700; color:green;"></div>
+
+    </div>
+
+</div>
+
+<script>
+function bookNow(button) {
+    const confirmation = document.getElementById('confirmation');
+    confirmation.textContent = "✅ Booking info noted! Redirecting...";
+    button.disabled = true; // prevent double clicks
+
+    // Redirect to reservation.html after 2 seconds
+    setTimeout(() => {
+        window.location.href = "riverreserve.html";
+    }, 2000);
+}
+</script>
+
+</body>
+</html>

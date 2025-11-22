@@ -145,6 +145,17 @@
     border-radius: 10px;
   }
 
+  /* Cottage Section Spacing */
+.cottage-container {
+  display: flex;
+  flex-wrap: wrap;      /* allow cards to move to next line */
+  gap: 4rem;            /* space between cards */
+  justify-content: flex-start; /* align left */
+  padding: 0 1rem;
+  margin-bottom: 3rem;
+}
+
+
   /* New wrapper for images */
   .img-wrapper {
     width: 100%;
@@ -356,31 +367,31 @@
 </div>
 
 <h2 class="section-title">Available Cottages</h2>
-<div class="carousel-wrapper">
-  <button class="arrow left">‹</button>
+<div class="cottage-container">
+
   <div class="cards-container">
-    <!-- CARD 1 -->
+    <!-- CARD 5 -->
     <article class="card">
       <div class="img-wrapper">
         <img src="https://cdn.gracerealty.ph/media/gallery/1200/x/9/family-room-1.jpg" alt="Family Room"/>
       </div>
-      <div class="card-title">Family Room</div>
+      <div class="card-title">Riverside Haven</div>
       <p class="card-description">A spacious and cozy space ideal for family gatherings and relaxation.</p>
       <div class="price-rating-row">
-        <div class="price">₱ 12,000</div>
+        <div class="price">₱ 10,000</div>
         <div class="stars">★★★★★</div>
       </div>
-      <a href="family.html">
+      <a href="river.html">
   <button class="btn-details">View details</button>
 </a>
     </article>
 
-    <!-- CARD 2 -->
+    <!-- CARD 6 -->
     <article class="card">
       <div class="img-wrapper">
         <img src="https://cdn.getaway.ph/wp-content/uploads/2018/06/FV-Antique-Room-2.jpg" alt="Antique Room"/>
       </div>
-      <div class="card-title">Antique Room</div>
+      <div class="card-title">Bamboo Haven</div>
       <p class="card-description">Timeless elegance blending heritage charm and vintage style.</p>
       <div class="price-rating-row">
         <div class="price">₱ 2,500</div>
@@ -391,12 +402,12 @@
 </a>
     </article>
 
-    <!-- CARD 3 -->
+    <!-- CARD 7 -->
     <article class="card">
       <div class="img-wrapper">
         <img src="https://www.meralco.com.ph/app/uploads/reina-rooms.jpg" alt="Reina Room"/>
       </div>
-      <div class="card-title">Reina Room</div>
+      <div class="card-title">Cozy Corner</div>
       <p class="card-description">Spacious, elegant, surrounded by nature, blending modern Filipino aesthetics.</p>
       <div class="price-rating-row">
         <div class="price">₱ 3,600</div>
@@ -407,24 +418,6 @@
 </a>
     </article>
 
-    <!-- CARD 4 -->
-    <article class="card">
-      <div class="img-wrapper">
-        <img src="https://www.meralco.com.ph/app/uploads/reina-rooms.jpg" alt="Reina Room"/>
-      </div>
-      <div class="card-title">Reina Room</div>
-      <p class="card-description">Spacious, elegant, surrounded by nature, blending modern Filipino aesthetics.</p>
-      <div class="price-rating-row">
-        <div class="price">₱ 3,600</div>
-        <div class="stars">★★★★☆</div>
-      </div>
-       <a href="family.html">
-  <button class="btn-details">View details</button>
-</a>
-    </article>
-  </div>
-  <button class="arrow right">›</button>
-</div>
 
 <script>
 const containers = document.querySelectorAll('.cards-container');
