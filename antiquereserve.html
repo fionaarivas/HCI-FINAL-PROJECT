@@ -155,9 +155,11 @@
     padding-bottom: 3px;
     color: #333;
   }
+
+  /* UPDATED SELECT WITH ARROW ICON */
   select {
     width: 100%;
-    padding: 4px 6px;
+    padding: 4px 30px 4px 6px; /* space for arrow */
     border: 1px solid #9da888;
     border-radius: 2px;
     font-size: 14px;
@@ -167,6 +169,12 @@
     -moz-appearance: none;
     appearance: none;
     cursor: pointer;
+
+    /* dropdown arrow */
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%230f3e1b' height='14' viewBox='0 0 20 20' width='14' xmlns='http://www.w3.org/2000/svg'><polygon points='0,0 20,0 10,10'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 12px;
   }
 
   .guests-select {
@@ -304,15 +312,13 @@
 
 <script>
 function confirmReservation() {
-    // Show confirmation message
     const confirmationDiv = document.getElementById('confirmation');
     confirmationDiv.textContent = "✅ Your reservation has been successfully made!";
-
-    // After 2 seconds, redirect to home page
     setTimeout(() => {
-        window.location.href = 'home.html'; // change to your home page URL
+        window.location.href = 'home.html';
     }, 2000);
 }
 </script>
+
 </body>
 </html>
