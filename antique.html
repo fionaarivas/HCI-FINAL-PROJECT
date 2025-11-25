@@ -182,9 +182,9 @@ ul li {
 
     <!-- IMAGE CAROUSEL -->
     <div class="images-carousel">
-        <img class="carousel-img active" src="https://tse4.mm.bing.net/th/id/OIP.rrIXO0QpF6nbMxjYd84CBQHaE8?w=990&h=660&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Big Family Room 1">
-        <img class="carousel-img" src="https://mobileimages.lowes.com/productimages/4da64297-75c0-4a09-8cce-8f7fbdd81cd3/62379092.jpg?size=pdhism" alt="Big Family Room 2">
-        <img class="carousel-img" src="https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?cs=srgb&dl=pexels-jean-van-der-meulen-1454806.jpg&fm=jpg" alt="Big Family Room 3">
+        <img class="carousel-img active" src="https://scontent.fmnl4-1.fna.fbcdn.net/v/t1.15752-9/585010825_3715978685375691_6030023195003989256_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeHDS1jfe76Sn7Wu9bxbgeyhahyIO1CwnIlqHIg7ULCcibD2KBRjZt2jxExegNd4C79HbF0CMe-KDhhkTNlLZPeq&_nc_ohc=zRoLdgOv1zwQ7kNvwFGFvQQ&_nc_oc=AdlPpRGcSr5HHALQ13WGB4O79Tx98kF08VxJ22M2x_TvwGrhjRmEyrfDmLSz9hLsKzI&_nc_zt=23&_nc_ht=scontent.fmnl4-1.fna&oh=03_Q7cD3wGsLav9xqp_d1_IY0a3_2hBsv29cJ9jykZpV0LyuL1T1Q&oe=694D7701" alt="Big Family Room 1">
+        <img class="carousel-img" src="https://scontent.fmnl4-4.fna.fbcdn.net/v/t1.15752-9/583035705_871341742013184_3026181572800631852_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEBK_co2b9F4WAGHFLyxl-S2HKqCT7Vyt7YcqoJPtXK3n4GeGBsR63WBv6zImGuofkngsQ3oUExpQV4klW_Qmie&_nc_ohc=CF6zuXpZbDsQ7kNvwGas29m&_nc_oc=AdkRUxO-JRTmzvqBhFZs0ljWasaKXCKFxwcK6bO64B5_DZ9a5mUWFqe8YKv-Bq4xrYA&_nc_zt=23&_nc_ht=scontent.fmnl4-4.fna&oh=03_Q7cD3wG5x7UZAiYS4xYEL-X7UjZH31iQHSoecJj_ymCGZC-Nwg&oe=694D853C" alt="Big Family Room 2">
+        <img class="carousel-img" src="https://scontent.fmnl4-6.fna.fbcdn.net/v/t1.15752-9/589724351_1572399724210812_3283924081524523716_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeH3W2jIFXQinwRXmpHuYvsw2gBvutQ2Z5jaAG-61DZnmEs_O5M1WvQs4vXFmW665H0fpgCoq8AlhC2zjXZisYK1&_nc_ohc=HLomzql5PeYQ7kNvwHjDgvK&_nc_oc=AdkWxlgKcVFVQhZYHpsZmZnhaxKwwDifegxwr5JvqIk-Vq-u8GisUD8vju1yXyS5WSg&_nc_zt=23&_nc_ht=scontent.fmnl4-6.fna&oh=03_Q7cD3wHiLThq4irU5onrU8rWGX_pt2H1ZPz4ZVoJcs8LplKSnQ&oe=694D8F59" alt="Big Family Room 3">
 
         <button class="prev" onclick="plusSlides(-1)">❮</button>
         <button class="next" onclick="plusSlides(1)">❯</button>
@@ -195,7 +195,7 @@ ul li {
 
         <div class="stars">★★★★★</div>
 
-        <h1>Big Family Room</h1>
+        <h1>Family Room</h1>
 
         <p>A spacious and cozy space ideal for family gatherings and relaxation. It’s perfect for bonding, entertainment, and creating lasting memories together.</p>
 
@@ -207,7 +207,7 @@ ul li {
         </ul>
 
         <div class="price-label">Starts From</div>
-        <div class="price">₱12,000</div>
+        <div class="price">₱12,000 / night</div>
 
         <button class="book-btn" onclick="bookNow(this)">BOOK NOW</button>
         <div id="confirmation" style="margin-top:10px; font-weight:700; color:green;"></div>
@@ -223,7 +223,7 @@ function bookNow(button) {
     button.disabled = true;
 
     setTimeout(() => {
-        window.location.href = "familyreserve.html";
+        window.location.href = "antiquereserve.html";
     }, 2000);
 }
 
@@ -243,6 +243,24 @@ function plusSlides(n) {
     showSlides(slideIndex);
 }
 </script>
+
+<script>
+    // Function to load the profile picture from localStorage
+    function loadProfilePicture() {
+        // Retrieve the saved photo data (Data URL) from localStorage
+        const profilePic = localStorage.getItem("photo");
+        const imgElement = document.getElementById("header-profile-pic");
+        
+        // If a saved photo is found, update the image source
+        if (profilePic && imgElement) {
+            imgElement.src = profilePic;
+        }
+    }
+
+    // Call the function when the page loads
+    window.onload = loadProfilePicture;
+</script>
+
 
 </body>
 </html>

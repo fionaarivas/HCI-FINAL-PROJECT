@@ -278,7 +278,9 @@
       <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
       Location: Calaca Batangas
     </div>
+    <a href="profile.html" class="profile-link">
     <img src="https://i.pinimg.com/474x/29/0f/f4/290ff47027c529ee3ff4aaf7d4075bea.jpg" alt="User profile" class="profile-img" />
+    </a>
   </div>
 </header>
 
@@ -304,7 +306,7 @@
     <!-- CARD 1 -->
     <article class="card">
       <div class="img-wrapper">
-        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/532505664.jpg?k=186a14b53cc7fdee3f26fd7fd1f11d8577440154fe34b68455c98741c6950893&o=" alt="Family Room"/>
+        <img src="https://scontent.fmnl4-1.fna.fbcdn.net/v/t1.15752-9/585010825_3715978685375691_6030023195003989256_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeHDS1jfe76Sn7Wu9bxbgeyhahyIO1CwnIlqHIg7ULCcibD2KBRjZt2jxExegNd4C79HbF0CMe-KDhhkTNlLZPeq&_nc_ohc=zRoLdgOv1zwQ7kNvwFGFvQQ&_nc_oc=AdlPpRGcSr5HHALQ13WGB4O79Tx98kF08VxJ22M2x_TvwGrhjRmEyrfDmLSz9hLsKzI&_nc_zt=23&_nc_ht=scontent.fmnl4-1.fna&oh=03_Q7cD3wGsLav9xqp_d1_IY0a3_2hBsv29cJ9jykZpV0LyuL1T1Q&oe=694D7701" alt="Family Room"/>
       </div>
       <div class="card-title">Family Room</div>
       <p class="card-description">A spacious and cozy space ideal for family gatherings and relaxation.</p>
@@ -323,7 +325,7 @@
         <img src="https://scontent.fmnl4-3.fna.fbcdn.net/v/t1.15752-9/589100650_1172409808328459_3397391318535268442_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEaS_XRdYuX73ctxBxfbz87YeudHarbu4Bh650dqtu7gES6Tvu-8yD3XFsVlWp4bx7EDdcYeu39137qvRqYqesn&_nc_ohc=DvuvH2TTXdQQ7kNvwFHGbtP&_nc_oc=Admy6R_AEfRknZc9pQgNVhBDGUD6nzVXF7tpb1MzZrZ9MocgOricAF4vHuZle4ZJ3-k&_nc_zt=23&_nc_ht=scontent.fmnl4-3.fna&oh=03_Q7cD3wFeKEp4bLexNlOLSrsGzU6kWqTHNP_QcC21OSgJErqdEw&oe=694D795C" alt="Antique Room"/>
       </div>
       <div class="card-title">Antique Room</div>
-      <p class="card-description">Timeless elegance blending heritage charm and vintage style.</p>
+      <p class="card-description">Step into timeless elegance with our Antique Room — a beautifully curated...</p>
       <div class="price-rating-row">
         <div class="stars">★★★★★</div>
         <div class="price">₱ 2,500</div>
@@ -340,7 +342,7 @@
         <img src="https://scontent.fmnl4-7.fna.fbcdn.net/v/t1.15752-9/585069898_843903541564178_6879127875149200658_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeFNNrM_-5GfFHV1qeUJxEJ206vZHawPyBnTq9kdrA_IGTJ9qsjZW9kZ_z8pQTk6XbQFfcFSQGjkmV2LUktNNbBP&_nc_ohc=aYqOoXbsTpAQ7kNvwG4MN_b&_nc_oc=AdlYUmLNn0dQNN0I3mkGIgafrmeEmJdPrt0YrWhm9o0VyHgw43zLWyWTkX25TJgAdfU&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&oh=03_Q7cD3wH7gX6sXxS8Kb0WCFF9Rf3pWBEmZn6ZduH6_jmRzfeU4A&oe=694D5A97" alt="Reina Room"/>
       </div>
       <div class="card-title">Reina Room</div>
-      <p class="card-description">Spacious, elegant, surrounded by nature, blending modern Filipino aesthetics.</p>
+      <p class="card-description">a spacious and elegantly designed and  Surrounded by the calming ambiance of nature..</p>
       <div class="price-rating-row">
         <div class="stars">★★★★★</div>
         <div class="price">₱ 3,600</div>
@@ -437,7 +439,27 @@ containers.forEach(container => {
     container.scrollBy({ left: 300, behavior: 'smooth' });
   });
 });
+
 </script>
+
+<script>
+    // Function to load the profile picture from localStorage
+    function loadProfilePicture() {
+        // Retrieve the saved photo data (Data URL) from localStorage
+        const profilePic = localStorage.getItem("photo");
+        const imgElement = document.getElementById("header-profile-pic");
+        
+        // If a saved photo is found, update the image source
+        if (profilePic && imgElement) {
+            imgElement.src = profilePic;
+        }
+    }
+
+    // Call the function when the page loads
+    window.onload = loadProfilePicture;
+</script>
+
+
 
 </body>
 </html>

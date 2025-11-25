@@ -278,8 +278,9 @@
       <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
       Location: Calaca Batangas
     </div>
+    <a href="profile.html" class="profile-link">
     <img src="https://i.pinimg.com/474x/29/0f/f4/290ff47027c529ee3ff4aaf7d4075bea.jpg" alt="User profile" class="profile-img" />
-  </div>
+  </div></a>
 </header>
 
 <nav>
@@ -350,6 +351,24 @@ containers.forEach(container => {
   });
 });
 </script>
+
+<script>
+    // Function to load the profile picture from localStorage
+    function loadProfilePicture() {
+        // Retrieve the saved photo data (Data URL) from localStorage
+        const profilePic = localStorage.getItem("photo");
+        const imgElement = document.getElementById("header-profile-pic");
+        
+        // If a saved photo is found, update the image source
+        if (profilePic && imgElement) {
+            imgElement.src = profilePic;
+        }
+    }
+
+    // Call the function when the page loads
+    window.onload = loadProfilePicture;
+</script>
+
 
 </body>
 </html>

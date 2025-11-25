@@ -5,187 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yabut River Resort - Profile Page</title>
 <style>
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', sans-serif;
-        background-color: #f7f5f5;
-    }
+    body { margin:0; font-family:'Segoe UI', sans-serif; background-color:#f7f5f5; }
+    header { background-color:#264823; color:white; display:flex; justify-content:space-between; align-items:center; padding:12px 20px; font-family:Georgia, serif; font-size:18px; }
+    header .brand { font-weight:500; font-size:1.25rem; }
+    header .location { display:flex; align-items:center; gap:0.4rem; font-weight:400; user-select:none; }
+    header .location svg { width:1rem; height:1rem; fill:white; }
 
-    /* Header */
-    header {
-      background-color: #264823;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 20px;
-      font-family: Georgia, serif;
-      font-size: 18px;
-    }
+    .container { display:flex; justify-content:space-between; align-items:flex-start; padding:50px 80px; }
+     .profile { flex:1; text-align:center; }
 
-    header .brand {
-      font-weight: 500;
-      font-size: 1.25rem;
-    }
+    .back-btn { position: absolute; top: 95px; left: 50px; display:inline-flex; justify-content:center; align-items:center; background-color:#4a8f3b; color:white; border-radius:50%; width:45px; height:45px; font-size:22px; cursor:pointer; border:none; transition:background-color 0.3s ease, transform 0.2s ease; margin-bottom:20px; text-decoration:none; }
+    .back-btn:hover { background-color:#3c6536; transform:scale(1.1); }
 
-    header .location {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-weight: 400;
-      user-select: none;
-    }
+    .profile-pic { width:350px; height:350px; border-radius:50%; object-fit:cover; margin-bottom:15px; border:3px solid #4a8f3b; box-shadow:0 6px 15px rgba(0,0,0,0.25); background-color:#ddd; transition:transform 0.3s ease; }
+    .profile-pic:hover { transform:scale(1.05); }
 
-    header .location svg {
-      width: 1rem;
-      height: 1rem;
-      fill: white;
-    }
+    .photo-btn { display:inline-block; padding:10px 20px; background-color:#4a8f3b; color:white; border:none; border-radius:20px; cursor:pointer; margin-bottom:20px; transition:background-color 0.3s ease; }
+    .photo-btn:hover { background-color:#3c6536; }
 
-    /* Profile Section */
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 50px 80px;
-    }
+    .profile label { display:block; margin-top:10px; font-size:16px; }
+    .profile input { border:none; border-bottom:1px solid #333; background:none; width:250px; margin-bottom:10px; font-size:15px; padding:5px; }
+    .profile input:focus { outline:none; border-bottom:2px solid #223f1f; }
 
-    .profile {
-        flex: 1;
-    }
-header .profile-link {
-display: inline-block;
-}
-header .profile-img {
-width: 2rem;
-height: 2rem;
-border-radius: 50%;
-object-fit: cover;
-margin-left: 1rem;
-user-select: none;
-transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-header .profile-img:hover {
-transform: scale(1.05);
-box-shadow: 0 0 6px rgba(255,255,255,0.6);
-}
-    .profile-pic {
-    width: 350px;                      /* slightly bigger */
-    height: 350px;                     /* slightly bigger */
-    border: 50%;                
-    object-fit: cover;                 /* fit the image nicely */
-    margin-bottom: 30px;
-    border: 3px solid #4a8f3b;        /* subtle green border */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* stronger shadow for depth */
-    background-color: #ddd;            /* fallback color */
-    position: relative;
-    left: 150px;                        /* shift slightly to the right */
-    transition: transform 0.3s ease;
-}
+    .save-btn { background-color:#223f1f; color:white; border:none; padding:10px 30px; border-radius:20px; margin-top:10px; font-size:16px; cursor:pointer; transition: background-color 0.3s ease; }
+    .save-btn:hover { background-color:#3c6536; }
+    .logout-btn { background-color:#a52a2a; margin-top:10px; }
 
-.profile-pic:hover {
-    transform: scale(1.05);            /* slight zoom on hover */
-}
-   
-    .back-btn {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #4a8f3b;
-        color: white;
-        border-radius: 50%;
-        width: 45px;
-        height: 45px;
-        font-size: 22px;
-        cursor: pointer;
-        border: none;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-        margin-bottom: 20px;
-        text-decoration: none;
-    }
+    .bookings { background-color:#223f1f; color:white; border-radius:20px; width:350px; padding:35px; margin-top:70px; }
+    .bookings h2 { margin:0 0 10px 0; border-bottom:1px solid white; padding-bottom:15px; font-size:25px; }
+    .booking-item { display:flex; justify-content:space-between; align-items:center; margin:12px 0; font-size:15px; }
+    .status { padding:5px 12px; border-radius:15px; font-size:14px; }
+    .paid { background-color:#4a8f3b; color:white; }
+    .pending { background-color:white; color:#223f1f; }
 
-    .back-btn:hover {
-        background-color: #3c6536;
-        transform: scale(1.1);
-    }
-
-    .profile label {
-        display: block;
-        margin-top: 10px;
-        font-size: 16px;
-    }
-
-    .profile input {
-        border: none;
-        border-bottom: 1px solid #333;
-        background: none;
-        width: 250px;
-        margin-bottom: 10px;
-        font-size: 15px;
-        padding: 5px;
-    }
-
-    .profile input:focus {
-        outline: none;
-        border-bottom: 2px solid #223f1f;
-    }
-
-    .save-btn {
-        background-color: #223f1f;
-        color: white;
-        border: none;
-        padding: 10px 30px;
-        border-radius: 20px;
-        margin-top: 20px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .save-btn:hover {
-        background-color: #3c6536;
-    }
-
-    /* Bookings Section */
-    .bookings {
-        background-color: #223f1f;
-        color: white;
-        border-radius: 20px;
-        width: 350px;
-        padding: 35px;
-        margin-top: 70px;
-    }
-
-    .bookings h2 {
-        margin: 0 0 10px 0;
-        border-bottom: 1px solid white;
-        padding-bottom: 15px;
-        font-size: 25px;
-    }
-
-    .booking-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 12px 0;
-        font-size: 15px;
-    }
-
-    .status {
-        padding: 5px 12px;
-        border-radius: 15px;
-        font-size: 14px;
-    }
-
-    .paid {
-        background-color: #4a8f3b;
-        color: white;
-    }
-
-    .pending {
-        background-color: white;
-        color: #223f1f;
-    }
+    #photoInput { display:none; }
 </style>
 </head>
 <body>
@@ -202,50 +55,125 @@ box-shadow: 0 0 6px rgba(255,255,255,0.6);
 
 <div class="container">
     <div class="profile">
+        <a href="home.html" class="back-btn" style="margin-bottom:30px;">←</a>
 
-        <!-- ⭐⭐⭐ THIS IS THE WORKING BACK BUTTON ⭐⭐⭐ -->
-        <a href="javascript:history.back()" class="back-btn">←</a>
+        <!-- Profile picture -->
+        <img src="" alt="Profile Picture" class="profile-pic" id="profile-pic"><br>
 
-       
-
-
-        <div class="profile-pic"></div>
+        <label for="photoInput">Profile Photo</label>
+        <button class="photo-btn" id="choosePhotoBtn">Change Photo</button>
+        <input type="file" id="photoInput" accept="image/*"><br>
 
         <label>My profile</label>
-        <div style="display:flex; gap:20px;">
-            <input type="text" value="James Reid">
-            <input type="text" value="+56 956355367">
+        <div style="display:flex; gap:20px; justify-content:center;">
+            <input type="text" id="profile-username" placeholder="Username">
+            <input type="text" id="profile-phone" placeholder="Phone">
         </div>
-        <input type="email" value="jamesreid@gmail.com"><br>
-        <button class="save-btn">Save</button>
+        <input type="email" id="profile-email" placeholder="Email"><br>
+
+        <button class="save-btn" id="saveBtn">Save</button>
+        <button class="save-btn logout-btn" id="logoutBtn">Log Out</button>
     </div>
 
     <div class="bookings">
-        <h2>My bookings</h2>
-        <div class="booking-item">
-            <span>Family Package</span>
-            <span class="status pending">Pending</span>
+    <h2>My bookings</h2>
+    <div id="booking-list-container">
         </div>
-        <div class="booking-item">
-            <span>Boat Activity</span>
-            <span class="status paid">Paid</span>
-        </div>
-        <div class="booking-item">
-            <span>Parking</span>
-            <span class="status paid">Paid</span>
-        </div>
-        <div class="booking-item">
-            <span>Parking</span>
-            <span class="status pending">Pending</span>
-        </div>
-    </div>
 </div>
 
-<!-- BACK BUTTON SCRIPT -->
 <script>
-document.querySelector(".back-btn").addEventListener("click", function() {
-    window.location.href = "home.html"; 
+// Redirect if not logged in
+if(localStorage.getItem("isLoggedIn") !== "true") {
+ window.location.href = "login.html";
+}
+
+// ⭐ NEW FUNCTION: Loads and displays bookings from localStorage ⭐
+function loadUserBookings() {
+    const bookings = JSON.parse(localStorage.getItem('userBookings')) || [];
+    const container = document.getElementById('booking-list-container');
+
+    // Clear any existing content
+    container.innerHTML = '';
+
+    if (bookings.length === 0) {
+        container.innerHTML = '<p style="padding: 10px; opacity: 0.8; font-size: 14px;">No reservations found yet.</p>';
+        return;
+    }
+
+    // Iterate through the bookings in reverse (newest first)
+    bookings.reverse().forEach(booking => {
+        const status = booking.status || 'Unknown';
+        // Use lowercase status to map to CSS class (e.g., 'Pending' -> 'pending')
+        const statusClass = status.toLowerCase(); 
+        
+        // Format dates to be cleaner
+        const ci = new Date(booking.checkInDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        const co = new Date(booking.checkOutDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+        const bookingHtml = `
+            <div class="booking-item">
+                <span style="font-weight: bold;">${booking.room}</span>
+                <span class="status ${statusClass}">${status}</span>
+            </div>
+            <div class="booking-item" style="font-size: 14px; opacity: 0.7; border-bottom: 1px dashed #4a8f3b; padding-bottom: 8px; margin-bottom: 12px;">
+                <span>Dates: ${ci} - ${co} (${booking.guests})</span>
+                <span>Total: ₱ ${booking.totalPrice}</span>
+            </div>
+        `;
+        container.innerHTML += bookingHtml;
+    });
+}
+
+
+// Load user profile (existing function)
+function loadUserProfile() {
+ document.getElementById("profile-username").value = localStorage.getItem("currentUsername") || "";
+ document.getElementById("profile-email").value = localStorage.getItem("email") || "";
+ document.getElementById("profile-phone").value = localStorage.getItem("phone") || "";
+ const photo = localStorage.getItem("photo");
+ if(photo) document.getElementById("profile-pic").src = photo;
+}
+
+// Save profile updates (existing function)
+document.getElementById("saveBtn").addEventListener("click", () => {
+ const username = document.getElementById("profile-username").value.trim();
+ const email = document.getElementById("profile-email").value.trim();
+ const phone = document.getElementById("profile-phone").value.trim();
+ if(username && email) {
+ localStorage.setItem("currentUsername", username);
+ localStorage.setItem("email", email);
+localStorage.setItem("phone", phone);
+ alert("Profile updated successfully!");
+ } else {
+ alert("Username and Email cannot be empty.");
+ }
 });
+
+// Profile photo upload via button (existing function)
+document.getElementById("choosePhotoBtn").addEventListener("click", () => {
+ document.getElementById("photoInput").click();
+});
+document.getElementById("photoInput").addEventListener("change", (e) => {
+ const file = e.target.files[0];
+ if(!file) return;
+ const reader = new FileReader();
+ reader.onload = () => {
+ document.getElementById("profile-pic").src = reader.result;
+ localStorage.setItem("photo", reader.result);
+ };
+ reader.readAsDataURL(file);
+});
+
+// Logout button (existing function)
+document.getElementById("logoutBtn").addEventListener("click", () => {
+ localStorage.setItem("isLoggedIn", "false");
+    localStorage.removeItem("currentUsername"); 
+ alert("Logged out successfully!");
+ window.location.href = "login.html";
+});
+
+loadUserProfile();
+loadUserBookings(); // ⭐ Call the new function to load bookings on page load
 </script>
 
 </body>
