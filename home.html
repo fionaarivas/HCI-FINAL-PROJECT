@@ -211,7 +211,10 @@ Location: Calaca Batangas
 </div>
 <!-- ✅ Clickable profile -->
 <a href="profile.html" class="profile-link">
-<img src="https://i.pinimg.com/474x/29/0f/f4/290ff47027c529ee3ff4aaf7d4075bea.jpg" alt="User profile" class="profile-img" />
+    <img src="https://i.pinimg.com/474x/29/0f/f4/290ff47027c529ee3ff4aaf7d4075bea.jpg" 
+         alt="User profile" 
+         class="profile-img" 
+         id="header-profile-pic" /> 
 </a>
 </div>
 </header>
@@ -259,6 +262,7 @@ simplicity, comfort, and a close connection to nature.
     function loadProfilePicture() {
         // Retrieve the saved photo data (Data URL) from localStorage
         const profilePic = localStorage.getItem("photo");
+        // This is the element with the ID we just added to the HTML
         const imgElement = document.getElementById("header-profile-pic");
         
         // If a saved photo is found, update the image source
