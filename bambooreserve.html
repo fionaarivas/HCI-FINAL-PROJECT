@@ -236,28 +236,31 @@
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"></path></svg>
       Location: Calaca Batangas
     </div>
-    <img src="https://i.ibb.co/w6CYDDw/profile-cat.jpg" alt="User Profile" class="profile-img" />
+   <a href="profile.html" class="profile-link">
+    <img src="https://i.pinimg.com/474x/29/0f/f4/290ff47027c529ee3ff4aaf7d4075bea.jpg" 
+         alt="User profile" 
+         class="profile-img" 
+         id="header-profile-pic" /> 
+</a>
   </div>
 </header>
 
 <main>
   <section class="left-col">
     <span class="back-arrow" onclick="window.history.back()">←</span>
-    <h1>Big Family Room</h1>
+    <h1>Bamboo Haven</h1>
     <div class="images">
       <img class="big-img" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/532505664.jpg?k=186a14b53cc7fdee3f26fd7fd1f11d8577440154fe34b68455c98741c6950893&o=" alt="Big Family Room main" />
-      <div class="right-images">
-        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/532505664.jpg?k=186a14b53cc7fdee3f26fd7fd1f11d8577440154fe34b68455c98741c6950893&o=" alt="Bathroom" />
-        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/532505664.jpg?k=186a14b53cc7fdee3f26fd7fd1f11d8577440154fe34b68455c98741c6950893&o=" alt="Dining area" />
+
       </div>
     </div>
     <div class="description">
-      <p>A spacious and cozy space ideal for family gatherings and relaxation. It’s perfect for bonding, entertainment, and creating lasting memories together.</p>
+      <p>A comfortable open cottage ideal for small families or barkadas looking for shade and a relaxing riverside space.</p>
       <ul>
-        <li>Good for 10 pax</li>
-        <li>With own comfort rooms, kitchen & dining area</li>
-        <li>5 Queen sized bed plus Extra pull out bed</li>
-        <li>With 10 towels</li>
+         <li>Good for 10 pax</li>
+            <li>Duration: Typically 8am to 3pm</li>
+            <li> Seating/Dining</li>
+            <li> Grilling</li>
       </ul>
     </div>
   </section>
@@ -329,6 +332,24 @@ function confirmReservation() {
 // Initialize
 updateTotal();
 </script>
+
+<script>
+    // Function to load the profile picture from localStorage
+    function loadProfilePicture() {
+        // Retrieve the saved photo data (Data URL) from localStorage
+        const profilePic = localStorage.getItem("photo");
+        const imgElement = document.getElementById("header-profile-pic");
+        
+        // If a saved photo is found, update the image source
+        if (profilePic && imgElement) {
+            imgElement.src = profilePic;
+        }
+    }
+
+    // Call the function when the page loads
+    window.onload = loadProfilePicture;
+</script>
+
 
 
 

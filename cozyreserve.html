@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Big Family Room - Yabut River Resort</title>
+<title>Cozy - Yabut River Resort</title>
 <style>
   /* Reset and base */
   body, h1, p, ul, li, div {
@@ -236,34 +236,37 @@
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"></path></svg>
       Location: Calaca Batangas
     </div>
-    <img src="https://i.ibb.co/w6CYDDw/profile-cat.jpg" alt="User Profile" class="profile-img" />
+   <a href="profile.html" class="profile-link">
+    <img src="https://i.pinimg.com/474x/29/0f/f4/290ff47027c529ee3ff4aaf7d4075bea.jpg" 
+         alt="User profile" 
+         class="profile-img" 
+         id="header-profile-pic" /> 
+</a>
   </div>
 </header>
 
 <main>
   <section class="left-col">
     <span class="back-arrow" onclick="window.history.back()">←</span>
-    <h1>Big Family Room</h1>
+    <h1>Cozy Corner</h1>
     <div class="images">
-      <img class="big-img" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/532505664.jpg?k=186a14b53cc7fdee3f26fd7fd1f11d8577440154fe34b68455c98741c6950893&o=" alt="Big Family Room main" />
-      <div class="right-images">
-        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/532505664.jpg?k=186a14b53cc7fdee3f26fd7fd1f11d8577440154fe34b68455c98741c6950893&o=" alt="Bathroom" />
-        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/532505664.jpg?k=186a14b53cc7fdee3f26fd7fd1f11d8577440154fe34b68455c98741c6950893&o=" alt="Dining area" />
+      <img class="big-img" src="https://scontent.fmnl4-2.fna.fbcdn.net/v/t1.15752-9/582315799_25399402849692541_1067896979546709405_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=9f807c&_nc_ohc=aHQnExaY55gQ7kNvwGsU9bI&_nc_oc=Adns7cUkYLnypwo9IUZt6pQebddgSnLQZ0jHy_yMpzWIhoXWMBszImRrqrCtNPE8Yy4&_nc_zt=23&_nc_ht=scontent.fmnl4-2.fna&oh=03_Q7cD3wHmGAi1PrrETnUvZJXOg4POagNHUcTR_717H62rNsrxwQ&oe=694A1A4C" alt="Big Family Room main" />
       </div>
     </div>
     <div class="description">
       <p>A spacious and cozy space ideal for family gatherings and relaxation. It’s perfect for bonding, entertainment, and creating lasting memories together.</p>
       <ul>
-        <li>Good for 10 pax</li>
-        <li>With own comfort rooms, kitchen & dining area</li>
-        <li>5 Queen sized bed plus Extra pull out bed</li>
-        <li>With 10 towels</li>
+         <li>Good for 10 pax</li>
+            <li>Duration: Typically 8am to 3pm</li>
+            <li> Seating/Dining</li>
+            <li> Grilling</li>
+           <li>Water Access</li> 
       </ul>
     </div>
   </section>
 
   <aside class="booking-box" aria-label="Booking details and reservation">
-  <div class="price" id="price">₱ 600 <small>day</small></div>
+  <div class="price" id="price">₱ 800 <small>day</small></div>
 
   <div class="booking-row">
     <div class="booking-col">
@@ -287,7 +290,7 @@
   </div>
 
   <div class="calc-row">
-    <span>₱ 600 x 1 day</span><span>₱ 600</span>
+    <span>₱ 800 x 1 day</span><span>₱ 800</span>
   </div>
   <div class="calc-row">
     <span>service fee</span><span>₱ 200</span>
@@ -302,7 +305,7 @@
 </aside>
 
 <script>
-const pricePerCottage = 600;
+const pricePerCottage = 800;
 const serviceFee = 200;
 
 function updateTotal() {
@@ -329,6 +332,25 @@ function confirmReservation() {
 // Initialize
 updateTotal();
 </script>
+
+
+<script>
+    // Function to load the profile picture from localStorage
+    function loadProfilePicture() {
+        // Retrieve the saved photo data (Data URL) from localStorage
+        const profilePic = localStorage.getItem("photo");
+        const imgElement = document.getElementById("header-profile-pic");
+        
+        // If a saved photo is found, update the image source
+        if (profilePic && imgElement) {
+            imgElement.src = profilePic;
+        }
+    }
+
+    // Call the function when the page loads
+    window.onload = loadProfilePicture;
+</script>
+
 
 
 
