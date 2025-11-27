@@ -322,6 +322,56 @@ function confirmReservation() {
 }
 
 updateTotal();
+
+// ⭐ UPDATED: Data Saving and Redirection Logic ⭐
+function confirmReservation() {
+    const total = updateTotal(); // Recalculate and validate dates
+
+    const confirmationDiv = document.getElementById('confirmation');
+    
+    // Check if total is valid (updateTotal returns the number or false)
+    if (total === false) {
+        confirmationDiv.textContent = "❗ Please select valid check-in and check-out dates.";
+        confirmationDiv.style.color = 'red';
+        return;
+    }
+
+    const checkin = document.getElementById('checkin').value;
+    const checkout = document.getElementById('checkout').value;
+    const guests = document.getElementById('guests').options[document.getElementById('guests').selectedIndex].text;
+    
+    // 1. Package the new booking object
+    const newBooking = {
+        id: Date.now(), // Unique ID
+        room: document.querySelector('h1').textContent, // "Antique Room"
+        checkInDate: checkin,
+        checkOutDate: checkout,
+        guests: guests,
+        totalPrice: total.toLocaleString('en-US'), // Format the final price
+        status: 'Pending' 
+    };
+
+    // 2. Retrieve existing bookings or initialize an empty array
+    let existingBookings = JSON.parse(localStorage.getItem('userBookings')) || [];
+    
+    // 3. Add the new booking to the list
+    existingBookings.push(newBooking);
+
+    // 4. Save the updated list back to localStorage
+    localStorage.setItem('userBookings', JSON.stringify(existingBookings));
+
+    // Show confirmation and redirect to profile page
+    confirmationDiv.textContent = "✅ Your reservation has been successfully made!";
+    confirmationDiv.style.color = 'green';
+    
+    setTimeout(() => {
+        // ⭐ UPDATED: Redirect to the profile page to see the new booking
+        window.location.href = 'profile.html'; 
+    }, 2000);
+}
+
+// Initialize total on page load
+updateTotal();
 </script>
 
 <script>
