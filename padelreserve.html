@@ -315,13 +315,7 @@ function updateTotal() {
 document.getElementById('guests').addEventListener('change', updateTotal);
 document.getElementById('date').addEventListener('change', updateTotal);
 
-function confirmReservation() {
-    updateTotal();
-    document.getElementById('confirmation').textContent = "✅ Your reservation has been successfully made!";
-    setTimeout(() => window.location.href = 'home.html', 2000);
-}
 
-updateTotal();
 
 // ⭐ UPDATED: Data Saving and Redirection Logic ⭐
 function confirmReservation() {
