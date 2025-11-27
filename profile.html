@@ -12,7 +12,7 @@
     header .location svg { width:1rem; height:1rem; fill:white; }
 
     .container { display:flex; justify-content:space-between; align-items:flex-start; padding:50px 80px; }
-     .profile { flex:1; text-align:center; }
+    .profile { flex:1; text-align:center; }
 
     .back-btn { position: absolute; top: 95px; left: 50px; display:inline-flex; justify-content:center; align-items:center; background-color:#4a8f3b; color:white; border-radius:50%; width:45px; height:45px; font-size:22px; cursor:pointer; border:none; transition:background-color 0.3s ease, transform 0.2s ease; margin-bottom:20px; text-decoration:none; }
     .back-btn:hover { background-color:#3c6536; transform:scale(1.1); }
@@ -29,7 +29,7 @@
 
     .save-btn { background-color:#223f1f; color:white; border:none; padding:10px 30px; border-radius:20px; margin-top:10px; font-size:16px; cursor:pointer; transition: background-color 0.3s ease; }
     .save-btn:hover { background-color:#3c6536; }
-    .logout-btn { background-color:#a52a2a; margin-top:10px; }
+    .logout-btn { background-color:#a52a2a; }
 
     .bookings { background-color:#223f1f; color:white; border-radius:20px; width:350px; padding:35px; margin-top:70px; }
     .bookings h2 { margin:0 0 10px 0; border-bottom:1px solid white; padding-bottom:15px; font-size:25px; }
@@ -55,9 +55,8 @@
 
 <div class="container">
     <div class="profile">
-        <a href="home.html" class="back-btn" style="margin-bottom:30px;">←</a>
+        <a href="home.html" class="back-btn">←</a>
 
-        <!-- Profile picture -->
         <img src="" alt="Profile Picture" class="profile-pic" id="profile-pic"><br>
 
         <label for="photoInput">Profile Photo</label>
@@ -76,23 +75,21 @@
     </div>
 
     <div class="bookings">
-    <h2>My bookings</h2>
-    <div id="booking-list-container">
-        </div>
+        <h2>My bookings</h2>
+        <div id="booking-list-container"></div>
+    </div>
 </div>
 
 <script>
 // Redirect if not logged in
 if(localStorage.getItem("isLoggedIn") !== "true") {
- window.location.href = "login.html";
+    window.location.href = "login.html";
 }
 
-// ⭐ NEW FUNCTION: Loads and displays bookings from localStorage ⭐
+// Load bookings
 function loadUserBookings() {
     const bookings = JSON.parse(localStorage.getItem('userBookings')) || [];
     const container = document.getElementById('booking-list-container');
-
-    // Clear any existing content
     container.innerHTML = '';
 
     if (bookings.length === 0) {
@@ -100,13 +97,10 @@ function loadUserBookings() {
         return;
     }
 
-    // Iterate through the bookings in reverse (newest first)
     bookings.reverse().forEach(booking => {
         const status = booking.status || 'Unknown';
-        // Use lowercase status to map to CSS class (e.g., 'Pending' -> 'pending')
         const statusClass = status.toLowerCase(); 
         
-        // Format dates to be cleaner
         const ci = new Date(booking.checkInDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
         const co = new Date(booking.checkOutDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 
@@ -124,56 +118,68 @@ function loadUserBookings() {
     });
 }
 
-
-// Load user profile (existing function)
+// Load profile
 function loadUserProfile() {
- document.getElementById("profile-username").value = localStorage.getItem("currentUsername") || "";
- document.getElementById("profile-email").value = localStorage.getItem("email") || "";
- document.getElementById("profile-phone").value = localStorage.getItem("phone") || "";
- const photo = localStorage.getItem("photo");
- if(photo) document.getElementById("profile-pic").src = photo;
+    document.getElementById("profile-username").value = localStorage.getItem("currentUsername") || "";
+    document.getElementById("profile-email").value = localStorage.getItem("email") || "";
+    document.getElementById("profile-phone").value = localStorage.getItem("phone") || "";
+    const photo = localStorage.getItem("photo");
+    if(photo) document.getElementById("profile-pic").src = photo;
 }
 
-// Save profile updates (existing function)
+// Save profile
 document.getElementById("saveBtn").addEventListener("click", () => {
- const username = document.getElementById("profile-username").value.trim();
- const email = document.getElementById("profile-email").value.trim();
- const phone = document.getElementById("profile-phone").value.trim();
- if(username && email) {
- localStorage.setItem("currentUsername", username);
- localStorage.setItem("email", email);
-localStorage.setItem("phone", phone);
- alert("Profile updated successfully!");
- } else {
- alert("Username and Email cannot be empty.");
- }
+    const username = document.getElementById("profile-username").value.trim();
+    const email = document.getElementById("profile-email").value.trim();
+    const phone = document.getElementById("profile-phone").value.trim();
+
+    if(username && email) {
+        localStorage.setItem("currentUsername", username);
+        localStorage.setItem("email", email);
+        localStorage.setItem("phone", phone);
+        alert("Profile updated successfully!");
+    } else {
+        alert("Username and Email cannot be empty.");
+    }
 });
 
-// Profile photo upload via button (existing function)
+// Photo upload
 document.getElementById("choosePhotoBtn").addEventListener("click", () => {
- document.getElementById("photoInput").click();
-});
-document.getElementById("photoInput").addEventListener("change", (e) => {
- const file = e.target.files[0];
- if(!file) return;
- const reader = new FileReader();
- reader.onload = () => {
- document.getElementById("profile-pic").src = reader.result;
- localStorage.setItem("photo", reader.result);
- };
- reader.readAsDataURL(file);
+    document.getElementById("photoInput").click();
 });
 
-// Logout button (existing function)
+document.getElementById("photoInput").addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if(!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+        document.getElementById("profile-pic").src = reader.result;
+        localStorage.setItem("photo", reader.result);
+    };
+    reader.readAsDataURL(file);
+});
+
+// ✅ FIXED LOGOUT (clears all user & booking data)
 document.getElementById("logoutBtn").addEventListener("click", () => {
- localStorage.setItem("isLoggedIn", "false");
-    localStorage.removeItem("currentUsername"); 
- alert("Logged out successfully!");
- window.location.href = "login.html";
+    localStorage.setItem("isLoggedIn", "false");
+
+    localStorage.removeItem("currentUsername");
+    localStorage.removeItem("email");
+    localStorage.removeItem("phone");
+    localStorage.removeItem("photo");
+
+    localStorage.removeItem("userBookings");
+    localStorage.removeItem("reservation");
+    localStorage.removeItem("selectedRoom");
+    localStorage.removeItem("totalPrice");
+
+    alert("Logged out successfully!");
+    window.location.href = "login.html";
 });
 
 loadUserProfile();
-loadUserBookings(); // ⭐ Call the new function to load bookings on page load
+loadUserBookings();
 </script>
 
 </body>
