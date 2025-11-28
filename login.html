@@ -123,6 +123,7 @@ loginForm.addEventListener("submit", (e) => {
   const savedEmail = localStorage.getItem("email");
   const savedPassword = localStorage.getItem("password");
   const savedUsername = localStorage.getItem("username");
+  const savedPhoto = localStorage.getItem("photo");
 
   if (inputEmail === savedEmail && inputPassword === savedPassword) {
     localStorage.setItem("isLoggedIn", "true");
