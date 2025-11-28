@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Cozy - Yabut River Resort</title>
+<title>Big Family Room - Yabut River Resort</title>
 <style>
   /* Reset and base */
   body, h1, p, ul, li, div {
@@ -242,7 +242,6 @@
          class="profile-img" 
          id="header-profile-pic" /> 
 </a>
-  </div>
 </header>
 
 <main>
@@ -251,12 +250,11 @@
     <h1>Cozy Corner</h1>
     <div class="images">
       <img class="big-img" src="https://scontent.fmnl4-2.fna.fbcdn.net/v/t1.15752-9/582315799_25399402849692541_1067896979546709405_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=9f807c&_nc_ohc=aHQnExaY55gQ7kNvwGsU9bI&_nc_oc=Adns7cUkYLnypwo9IUZt6pQebddgSnLQZ0jHy_yMpzWIhoXWMBszImRrqrCtNPE8Yy4&_nc_zt=23&_nc_ht=scontent.fmnl4-2.fna&oh=03_Q7cD3wHmGAi1PrrETnUvZJXOg4POagNHUcTR_717H62rNsrxwQ&oe=694A1A4C" alt="Big Family Room main" />
-      </div>
+
+        
     </div>
     <div class="description">
-      <p>A spacious and cozy space ideal for family gatherings and relaxation. It’s perfect for bonding, entertainment, and creating lasting memories together.</p>
-      <ul>
-         <li>Good for 10 pax</li>
+            <li>Good for 10 pax</li>
             <li>Duration: Typically 8am to 3pm</li>
             <li> Seating/Dining</li>
             <li> Grilling</li>
@@ -266,7 +264,7 @@
   </section>
 
   <aside class="booking-box" aria-label="Booking details and reservation">
-  <div class="price" id="price">₱ 800 <small>day</small></div>
+  <div class="price" id="price">₱ 800<small>day</small></div>
 
   <div class="booking-row">
     <div class="booking-col">
@@ -305,94 +303,61 @@
 </aside>
 
 <script>
-const pricePerCottage = 800;
+const pricePerDay = 800;
 const serviceFee = 200;
 
 function updateTotal() {
     const guests = document.getElementById('guests').value;
-    const subtotal = pricePerCottage;
+    const subtotal = pricePerDay;
     const total = subtotal + serviceFee;
 
-    document.querySelector('.calc-row span:first-child').textContent = `₱ ${pricePerCottage} x 1 day`;
+    document.querySelector('.calc-row span:first-child').textContent = `₱ ${pricePerDay} x 1 day`;
     document.querySelector('.calc-row span:last-child').textContent = `₱ ${subtotal}`;
-    document.querySelector('.total-row').textContent = `Total for ${guests}: ₱ ${total}`;
+    document.querySelector('.total-row').textContent = `Total for ${guests} guest${guests > 1 ? 's' : ''}: ₱ ${total}`;
 }
 
-// Update total when guest count changes
 document.getElementById('guests').addEventListener('change', updateTotal);
 
-// ⭐ UPDATED: Data Saving and Redirection Logic ⭐
 function confirmReservation() {
-    const total = updateTotal(); // Recalculate and validate dates
-
-    const confirmationDiv = document.getElementById('confirmation');
-    
-    // Check if total is valid (updateTotal returns the number or false)
-    if (total === false) {
-        confirmationDiv.textContent = "❗ Please select valid check-in and check-out dates.";
-        confirmationDiv.style.color = 'red';
-        return;
-    }
-
     const checkin = document.getElementById('checkin').value;
-    const checkout = document.getElementById('checkout').value;
-    const guests = document.getElementById('guests').options[document.getElementById('guests').selectedIndex].text;
-    
-    // 1. Package the new booking object
+    const guestsText = document.getElementById('guests').selectedOptions[0].text;
+    const subtotal = pricePerDay;
+    const total = subtotal + serviceFee;
+
     const newBooking = {
-        id: Date.now(), // Unique ID
-        room: document.querySelector('h1').textContent, // "Antique Room"
+        id: Date.now(),
+        room: document.querySelector('h1').textContent,
         checkInDate: checkin,
-        checkOutDate: checkout,
-        guests: guests,
-        totalPrice: total.toLocaleString('en-US'), // Format the final price
-        status: 'Pending' 
+        checkOutDate: checkin, // single-day booking
+        guests: guestsText,
+        totalPrice: total.toLocaleString('en-US'),
+        status: 'Pending'
     };
 
-    // 2. Retrieve existing bookings or initialize an empty array
     let existingBookings = JSON.parse(localStorage.getItem('userBookings')) || [];
-    
-    // 3. Add the new booking to the list
     existingBookings.push(newBooking);
-
-    // 4. Save the updated list back to localStorage
     localStorage.setItem('userBookings', JSON.stringify(existingBookings));
 
-    // Show confirmation and redirect to profile page
+    const confirmationDiv = document.getElementById('confirmation');
     confirmationDiv.textContent = "✅ Your reservation has been successfully made!";
     confirmationDiv.style.color = 'green';
-    
+
     setTimeout(() => {
-        // ⭐ UPDATED: Redirect to the profile page to see the new booking
-        window.location.href = 'profile.html'; 
+        window.location.href = 'profile.html';
     }, 2000);
 }
 
-// Initialize total on page load
+// Initialize
 updateTotal();
 
+// Load profile picture
+function loadProfilePicture() {
+    const profilePic = localStorage.getItem("photo");
+    const imgElement = document.getElementById("header-profile-pic");
+    if(profilePic && imgElement) imgElement.src = profilePic;
+}
+window.onload = loadProfilePicture;
 </script>
-
-
-<script>
-    // Function to load the profile picture from localStorage
-    function loadProfilePicture() {
-        // Retrieve the saved photo data (Data URL) from localStorage
-        const profilePic = localStorage.getItem("photo");
-        const imgElement = document.getElementById("header-profile-pic");
-        
-        // If a saved photo is found, update the image source
-        if (profilePic && imgElement) {
-            imgElement.src = profilePic;
-        }
-    }
-
-    // Call the function when the page loads
-    window.onload = loadProfilePicture;
-</script>
-
-
-
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Big Family Room - Yabut River Resort</title>
+<title>Riverside Haven - Yabut River Resort</title>
 <style>
   /* Reset and base */
   body, h1, p, ul, li, div {
@@ -15,9 +15,7 @@
     color: #1d1d1d;
     line-height: 1.5;
   }
-  a, button {
-    font-family: inherit;
-  }
+  a, button { font-family: inherit; }
 
   /* Header */
   header {
@@ -29,20 +27,14 @@
     justify-content: space-between;
     padding: 12px 20px;
   }
-  header .brand {
-    font-size: 20px;
-  }
+  header .brand { font-size: 20px; }
   header .location {
     font-size: 14px;
     display: flex;
     align-items: center;
     gap: 6px;
   }
-  header .location svg {
-    fill: #e4ebdd;
-    width: 16px;
-    height: 16px;
-  }
+  header .location svg { fill: #e4ebdd; width: 16px; height: 16px; }
   header .profile-img {
     width: 33px;
     height: 33px;
@@ -61,7 +53,7 @@
     gap: 36px;
   }
 
-  /* Back arrow above images */
+  /* Back arrow */
   .back-arrow {
     cursor: pointer;
     font-size: 24px;
@@ -89,18 +81,6 @@
     border: 1px solid #bbb2a8;
     max-height: 225px;
     object-fit: cover;
-  }
-  .images .right-images {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 13px;
-  }
-  .images .right-images img {
-    width: 280px;
-    height: 110px;
-    object-fit: cover;
-    border: 1px solid #bbb2a8;
   }
 
   /* Description */
@@ -136,50 +116,25 @@
     font-size: 22px;
     margin-bottom: 18px;
   }
-  .price small {
-    font-weight: 300;
-    font-size: 15px;
-  }
+  .price small { font-weight: 300; font-size: 15px; }
 
-  .booking-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 14px;
-  }
-  .booking-col {
-    width: 48%;
-  }
-  label {
-    display: block;
-    font-weight: 600;
-    padding-bottom: 3px;
-    color: #333;
-  }
-
-  /* UPDATED SELECT WITH ARROW ICON */
+  label { display: block; font-weight: 600; padding-bottom: 3px; color: #333; }
   select {
     width: 100%;
-    padding: 4px 30px 4px 6px; /* space for arrow */
+    padding: 4px 30px 4px 6px;
     border: 1px solid #9da888;
     border-radius: 2px;
     font-size: 14px;
     outline: none;
     background-color: white;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     cursor: pointer;
-
-    /* dropdown arrow */
     background-image: url("data:image/svg+xml;utf8,<svg fill='%230f3e1b' height='14' viewBox='0 0 20 20' width='14' xmlns='http://www.w3.org/2000/svg'><polygon points='0,0 20,0 10,10'/></svg>");
     background-repeat: no-repeat;
     background-position: right 8px center;
     background-size: 12px;
   }
-
-  .guests-select {
-    margin-bottom: 14px;
-  }
+  .guests-select { margin-bottom: 14px; }
 
   .calc-row {
     display: flex;
@@ -187,12 +142,8 @@
     font-size: 14px;
     margin-bottom: 5px;
   }
-  .calc-row:nth-child(1) {
-    font-weight: 700;
-  }
-  .calc-row:not(:first-child):not(:last-child) {
-    opacity: 0.7;
-  }
+  .calc-row:nth-child(1) { font-weight: 700; }
+  .calc-row:not(:first-child):not(:last-child) { opacity: 0.7; }
 
   .total-row {
     font-weight: 700;
@@ -225,7 +176,6 @@
     text-align: center;
     font-size: 14px;
   }
-
 </style>
 </head>
 <body>
@@ -233,7 +183,9 @@
   <div class="brand">Yabut River Resort</div>
   <div style="display:flex; align-items:center;">
     <div class="location">
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"></path></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"></path>
+      </svg>
       Location: Calaca Batangas
     </div>
    <a href="profile.html" class="profile-link">
@@ -249,9 +201,7 @@
     <span class="back-arrow" onclick="window.history.back()">←</span>
     <h1>Riverside Haven</h1>
     <div class="images">
-      <img class="big-img" src="https://scontent.fmnl4-2.fna.fbcdn.net/v/t1.15752-9/582747283_835295399232935_3879781219490995878_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=9f807c&_nc_ohc=hT7twY_AfhgQ7kNvwHdVlAs&_nc_oc=AdmPskRG4N3h2vVJ8rDXDSeQOmsTn3DerO-AfVFeuiGorcz-7NDgB6--AxbX2NiNONQ&_nc_zt=23&_nc_ht=scontent.fmnl4-2.fna&oh=03_Q7cD3wEwL7VsiR6yrEyvLVE9AWYtXz_vhgJRgTjItTDhrXMspA&oe=694A3391" alt="Big Family Room main" />
-
-        
+      <img class="big-img" src="https://scontent.fmnl4-2.fna.fbcdn.net/v/t1.15752-9/582747283_835295399232935_3879781219490995878_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=9f807c&_nc_ohc=hT7twY_AfhgQ7kNvwHdVlAs&_nc_oc=AdmPskRG4N3h2vVJ8rDXDSeQOmsTn3DerO-AfVFeuiGorcz-7NDgB6--AxbX2NiNONQ&_nc_zt=23&_nc_ht=scontent.fmnl4-2.fna&oh=03_Q7cD3wEwL7VsiR6yrEyvLVE9AWYtXz_vhgJRgTjItTDhrXMspA&oe=694A3391" alt="Riverside Haven" />
     </div>
     <div class="description">
       <p>A simple outdoor table setup perfect for small groups who want a cozy spot to eat and relax by the river.</p>
@@ -263,92 +213,100 @@
   </section>
 
   <aside class="booking-box" aria-label="Booking details and reservation">
-  <div class="price" id="price">₱ 1,000 <small>day</small></div>
+    <div class="price">₱ 1,000 <small>day</small></div>
 
-  <div class="booking-row">
-    <div class="booking-col">
-      <label for="checkin">Date</label>
-      <select id="checkin" name="checkin">
-        <option value="2025-06-23" selected>6/23/2025</option>
-        <option value="2025-06-24">6/24/2025</option>
-        <option value="2025-06-25">6/25/2025</option>
+    <div class="booking-row">
+      <div class="booking-col">
+        <label for="checkin">Date</label>
+        <select id="checkin" name="checkin">
+          <option value="2025-06-23" selected>6/23/2025</option>
+          <option value="2025-06-24">6/24/2025</option>
+          <option value="2025-06-25">6/25/2025</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="guests-select">
+      <label for="guests">Guests</label>
+      <select id="guests" name="guests">
+        <option value="3">3 guests</option>
+        <option value="4">4 guests</option>
+        <option value="5">5 guests</option>
+        <option value="6" selected>6 guests</option>
       </select>
     </div>
-  </div>
 
-  <div class="guests-select">
-    <label for="guests">Guests</label>
-    <select id="guests" name="guests">
-      <option value="4">3 guests</option>
-      <option value="4">4 guests</option>
-      <option value="4">5 guests</option>
-      <option value="6" selected>6 guests</option>
-    </select>
-  </div>
+    <div class="calc-row">
+      <span>₱ 1,000 x 1 day</span><span>₱ 1,000</span>
+    </div>
+    <div class="calc-row">
+      <span>service fee</span><span>₱ 200</span>
+    </div>
 
-  <div class="calc-row">
-    <span>₱ 1,000 x 1 day</span><span>₱ 1,000</span>
-  </div>
-  <div class="calc-row">
-    <span>service fee</span><span>₱ 200</span>
-  </div>
+    <div class="total-row">
+      Total
+    </div>
 
-  <div class="total-row">
-    Total
-  </div>
-
-  <button class="reserve-btn" onclick="confirmReservation()">Reserve</button>
-  <div class="confirmation" id="confirmation"></div>
-</aside>
+    <button class="reserve-btn" onclick="confirmReservation()">Reserve</button>
+    <div class="confirmation" id="confirmation"></div>
+  </aside>
+</main>
 
 <script>
-const pricePerCottage = 1000;
+const pricePerDay = 1000;
 const serviceFee = 200;
 
 function updateTotal() {
     const guests = document.getElementById('guests').value;
-    const subtotal = pricePerCottage;
+    const subtotal = pricePerDay;
     const total = subtotal + serviceFee;
 
-    document.querySelector('.calc-row span:first-child').textContent = `₱ ${pricePerCottage} x 1 day`;
+    document.querySelector('.calc-row span:first-child').textContent = `₱ ${pricePerDay} x 1 day`;
     document.querySelector('.calc-row span:last-child').textContent = `₱ ${subtotal}`;
-    document.querySelector('.total-row').textContent = `Total for ${guests}: ₱ ${total}`;
+    document.querySelector('.total-row').textContent = `Total for ${guests} guest${guests > 1 ? 's' : ''}: ₱ ${total}`;
 }
 
-// Update total when guest count changes
 document.getElementById('guests').addEventListener('change', updateTotal);
 
 function confirmReservation() {
-    updateTotal();
-    document.getElementById('confirmation').textContent = "✅ Your reservation has been successfully made!";
+    const checkin = document.getElementById('checkin').value;
+    const guestsText = document.getElementById('guests').selectedOptions[0].text;
+    const subtotal = pricePerDay;
+    const total = subtotal + serviceFee;
+
+    const newBooking = {
+        id: Date.now(),
+        room: document.querySelector('h1').textContent,
+        checkInDate: checkin,
+        checkOutDate: checkin, // single-day booking
+        guests: guestsText,
+        totalPrice: total.toLocaleString('en-US'),
+        status: 'Pending'
+    };
+
+    let existingBookings = JSON.parse(localStorage.getItem('userBookings')) || [];
+    existingBookings.push(newBooking);
+    localStorage.setItem('userBookings', JSON.stringify(existingBookings));
+
+    const confirmationDiv = document.getElementById('confirmation');
+    confirmationDiv.textContent = "✅ Your reservation has been successfully made!";
+    confirmationDiv.style.color = 'green';
+
     setTimeout(() => {
-        window.location.href = 'home.html';
+        window.location.href = 'profile.html';
     }, 2000);
 }
 
 // Initialize
 updateTotal();
+
+// Load profile picture
+function loadProfilePicture() {
+    const profilePic = localStorage.getItem("photo");
+    const imgElement = document.getElementById("header-profile-pic");
+    if(profilePic && imgElement) imgElement.src = profilePic;
+}
+window.onload = loadProfilePicture;
 </script>
-
-<script>
-    // Function to load the profile picture from localStorage
-    function loadProfilePicture() {
-        // Retrieve the saved photo data (Data URL) from localStorage
-        const profilePic = localStorage.getItem("photo");
-        const imgElement = document.getElementById("header-profile-pic");
-        
-        // If a saved photo is found, update the image source
-        if (profilePic && imgElement) {
-            imgElement.src = profilePic;
-        }
-    }
-
-    // Call the function when the page loads
-    window.onload = loadProfilePicture;
-</script>
-
-
-
-
 </body>
 </html>
